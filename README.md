@@ -19,8 +19,8 @@ We present CineTechBench, a pioneering benchmark founded on precise, manual anno
 
 
 <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
-  <img src="asset/tax.png" width="30%" alt="tax"/>
-  <img src="asset/bench_compare.png" width="70%" alt="bench_compare"/>
+<!--   <img src="asset/tax.png" width="30%" alt="tax"/> -->
+  <img src="asset/bench_compare.png" width="100%" alt="bench_compare"/>
 </div>
 
 
