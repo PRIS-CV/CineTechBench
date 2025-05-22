@@ -6,7 +6,7 @@
 
 <div align="center">
 <a href="https://pris-cv.github.io/CineTechBench/"><img src="https://img.shields.io/static/v1?label=Project&message=Github&color=blue&logo=github-pages"></a> &ensp;
-<a href=""><img src="https://img.shields.io/static/v1?label=Arxiv&message=CineTechBench&color=red&logo=arxiv"></a> &ensp;
+<a href="http://arxiv.org/abs/2505.15145"><img src="https://img.shields.io/static/v1?label=Arxiv&message=CineTechBench&color=red&logo=arxiv"></a> &ensp;
 <a href="https://huggingface.co/datasets/Xinran0906/CineTechBench"><img src="https://img.shields.io/static/v1?label=HFDataset&message=CineTechBench&color=yellow"></a> &ensp;
 </div>
 
@@ -27,7 +27,6 @@ We present CineTechBench, a pioneering benchmark founded on precise, manual anno
 
 
 ## 📌 TODO
-- [ ] Release paper
 - [ ] Video extraction script for movie clips
 - [ ] Movie image link organization and documentation
 - [ ] Question-answering evaluation script
