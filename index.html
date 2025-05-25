@@ -125,7 +125,7 @@
 </head>
 <body>
   <div class="container">
-    <img src="asset/logov2.png" alt="CineTechBench Logo" class="logo">
+    <img src="asset/logov2.png" alt="CineTechBench Logo" class="logo" style="width: 35%;">
     <h1>CineTechBench: A Benchmark for Cinematographic Technique Understanding and Generation</h1>
     <div class="authors">
       Xinran Wang, Songyu Xu, Xiangxuan Shan, Yuxuan Zhang, Muxi Diao, Xueyan Duan, Yanhua Huang, Kongming Liang, Zhanyu Ma
@@ -138,42 +138,46 @@
       <b>Abstract:</b> We present CineTechBench, a pioneering benchmark founded on precise, manual annotation by seasoned cinematography experts across key cinematography dimensions. Our benchmark covers seven essential aspects—shot scale, shot angle, composition, camera movement, lighting, color, and focal length—and includes over 600 annotated movie images and 120 movie clips with clear cinematographic techniques. Please explore our results below. 
     </div>
 
+    <div class="section-title">Benchmark Comparison</div>
+    <img src="asset/bench_compare.png" alt="Benchmark Comparison" style="width: 100%;">
+    
+
+    <div class="section-title">Cinematographic Taxonomy</div>
+    <iframe src="./asset/tax.html" style="width: 100%; height: 512px; border: none;"></iframe>
+
+    <div class="section-title">Cinematographic Technique Understanding</div>
+    
+
     <div class="section-title">Camera Movement Generation</div>
     <div class="gallery">
       <div class="gallery-item">
-        <video controls poster="asset/logo.png">
+        <video controls poster="asset/firstframes/005_The Matrix_first_frame.jpg">
           <source src="asset/gen_results/original_clips/005_The Matrix.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <div class="caption">Original Clip: The Matrix</div>
       </div>
       <div class="gallery-item">
-        <video controls poster="asset/logo.png">
+        <video controls poster="asset/firstframes/005_The Matrix_first_frame.jpg">
           <source src="asset/gen_results/wan/gen_720p_005_The Matrix.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <div class="caption">Wan2.1-FLF-14B-720P</div>
       </div>
       <div class="gallery-item">
-        <video controls poster="asset/logo.png">
+        <video controls poster="asset/firstframes/005_The Matrix_first_frame.jpg">
           <source src="asset/gen_results/kling/gen_720p_005_The Matrix.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <div class="caption">Klingv1.6-FLF</div>
       </div>
       <div class="gallery-item">
-        <video controls poster="asset/logo.png">
-          <source src="asset/gen_results/kling/gen_720p_005_The Matrix.mp4" type="video/mp4">
+        <video controls poster="asset/firstframes/005_The Matrix_first_frame.jpg">
+          <source src="asset/gen_results/hunyuan/gen_720p_005_The Matrix.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <div class="caption">Klingv1.6-FLF</div>
+        <div class="caption">HunyuanVideo-I2V</div>
       </div>
-    </div>
-
-    <div class="section-title">Figures</div>
-    <div class="figures">
-      <img src="asset/bench_compare.png" alt="Benchmark Comparison">
-      <img src="asset/tax.png" alt="Taxonomy">
     </div>
 
     <div class="section-title">Citation</div>
@@ -187,9 +191,6 @@
   url={https://arxiv.org/abs/2505.15145},
 }
     </pre>
-    <div class="links">
-      <a href="https://arxiv.org/abs/2505.15145" target="_blank">Read the Paper on arXiv</a>
-    </div>
   </div>
 </body>
 </html>

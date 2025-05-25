@@ -1,0 +1,475 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=sunburst-drink&code=G4QwTgBAJiAuIQLwQNoCgIQN4cxAdiALYCmAXBAOQDKAxiADYmUA0umAlrCUdbAJ5MKOPHloB7BuLAVKAYgDsADgBsyqJXYQAvm1G0AFhwZQwJfBXSjMI65kKlZAUQAesM6Qi0pAZxIBaAFcAB1YtUVAGQPIIAEY9OwguHj5BGNtEr0lpWTkVWgBWKAUAM01M7XCdBNEM6wcYygBhXwCQsMzI6Ip4qs5uXgEhbD6xbJkqPIAGAoAmBVjyxMq7XSq60QbZAFkSKA5Aoi9WoNCa6y6Y3szkwbThUcwJKQn5FRn5xdGV6zW7DbwWyou32hwgPgM4lgHUSlx651Et1SwwB-nGuQKABZMaoAMxLVZVP7WVEEYiNEEHI5SfAAc3BkOhCLwcLizP6KSG6UeWReuRxuJIBQKBN-ROZpKBlAAMuI6QyoTC7KzrokkVyHpknujJrjaLjsQpRaIfiaJaMpa53DwSBAafSIYr2RAVc71fcRlreTldVNZgBOXFKY14U2hrQAXVwa1wdSlAEE6UwlUkBsjuXZnj75JjYioVP7ZqLiU8jCYzBZUOsLeTZAAJDi0gwQEBJ5jO12jd0onlZ15yXEAIwKtCU-O-4urmSlsoA7i22ymIoxumyu2mNZ6tX3cga5goRRPVubp7WIAAiABCHDAGh8EBI_FtwA4JFn547K6ubo3HtJ2r5SZZhITEFHzENMDDSCT0SIFzwAdWkIhKHvR9n1fd9Pyib9105P9ex1eR5lxKACmDI9fhguwpQAEQ4EBaTlRgF1pZMsNXVU7G7DNt0IuRZliXEDX9CCdEnf4a0cKgAAUwHEEpjFtR0mVGTsbl_HsvR3SZYhAANcRAUSoOqKdYLPShLxAWgAGsFRUzov3hXC7k03jAPkWJcxKWZaCMolI2jNhYy0KUmnEIhgnEHwuA4OUU24zVrG0-QlFoUoVExYtzkMYxTHMSxTOo8zqH4IhSDAdwOHoBglxZRy13UvDXMyZLFBIBRZgKQyKLNQr6nMppzHcRhaswNS1Q0niWr4hQpnzAopj848-s2cy6IYpiavYnDGpcqbElalROv9TEVCWyiVsBcyACVAiYCB5IgWAjFvHxRpderOOsBKt2m9y5CxTF9V8nrQyo_qpMoAAxMBiA4Ol3vGrjJsSv7szkU7MSmXEi1B6DLvsAbAjAYA9jteH21Uz6fya_bMz4oMhNmciKnEklJMaOtpA4AAvOV4C2qnsKc3b01Rg6-NmPSVFiZg8bE0Qo3xmwQvM7ZxFJ0h8HsvAfoBVqcUNlmwa0HLy3yqsJNPSGaMkBh-ER6nnLF36Jf-3MPa-VnlqtszIekvYSB8AXHeFhqJtp8X6f-gzY-672Lt9orIYAFTAQIbNDjiab2qOkoZ2YcZx87eqTiHGmk1ss52iPc9d6P0dmQcm6bkuTbL1bU-MHXlSd0XN3_b1-1mTER5Htv8YJslIeuu3q5F2uXcH1rYigVfV4nkyp6lAAtcRwqSfB5_D5HI_r_P_rzK-zvlks8Elcy94P8RAh7i4-8XgeCP-qYSF_3_N5hiViZFWndGhQ3ENVO05haTPXiijc-rV_TtTUEaLQd8zZ5UrFYdm1tGh8FbDAW80D8BvW2gvU-ddl58SUCQFQIAVCDkAeDMBsh4IcCgAEVsrFbRMFIcfL6iIEHUP-goIUQoyi3xYVdVOJAmDBEZOIEhZChbZ2dl_LSfEVAlAKLiXRzDt7mShhwCEaFlECJzkvb-6MCglFAqBAxHcZEUisnJcx5CT7fWEdY_smIShDj1I43BfsK5gA4J4PhKiHJh0EbrbxmiY7eX8YtW-AVlau1CuMeBZ99ZaJAJiLExt0mllyhWAqTjCYzz2BY9R-EEk2P8SBL2yw2a1A5rIAAmnIqQs4an9zqW5GxuiFAGSCW0vBshLzYT6Z_AZaNfEgFxNjXGCdS7BOTo0AA4mYcwMzKFWPqb4v0hYmFSMMf7YmwQ2KqJrvsjRgz-x6MLuPM5FTp6NCmVZWyhCICziMNwPZXick-NyFLWItAN6pMVoFYKrCqDSkbAYWA8NaTZKoVUVqyhYhzCKSAsQZYsHlPWeXWQKdxDBHJk2N-y4YmWPufM3I-RBIvNWe3YlcKaAcN4Yi6ldVaW1Oam7dG7xYixFmCk1lxT77tKoJZGyEAEVUsBUI4FhyMRYxKOCsZ0qJlUGoPJWAlKkXKriaqh5_IlBTDXrik0rSdUhPrOAKARreVjQ_ncuZQrHm0CmIOTy2rQEOvheIec1lHwmo5OitVvophKFiBKlpPt2XOPrIiiAYaHYeNiZGg55qgJY3eCDSVCs8DAMqBGAA3GgclyK5RIC3H4MJQdxYCGCI0HwgR8CDmJsHFMMB4AUH7SAc4sNQQ-EsFMFgVB_QFAAKSUAjOcHw0hYAUE7ZwhS-A9jnB4AokA0Vx3nxKJAwIh7KCtloEHWA0gspaCYKTBgh6cG1DvoGuwYApiyGxfO50rwsY_oFXTawg5pCcLAOwqAz0KCzG-M6BgIBBxyLzqIOS8BuCyHgHSIa9FBbRsoH85I71MDHu1vBEgPLZAgZMERiAJHYDUF5lcTErzk2YA_bIf971XiWoA5keDiGGDIbwIwRslZKBhKVc6AC2YCMAqk7R_mZGKNUCoxoeTdGGM8yY1C0t0Y0DaArUAA
+	⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://echarts.apache.org/zh/js/vendors/echarts-gl/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://echarts.apache.org/zh/js/vendors/echarts-stat/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-graph-modularity extension
+  <script type="text/javascript" src="https://echarts.apache.org/zh/js/vendors/echarts-graph-modularity/dist/echarts-graph-modularity.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    var data = [
+  {
+    name: 'Scale',
+    itemStyle: {
+      color: '#78678d'
+    },
+    children: [
+      {
+        name: 'Extreme close-up',
+        value: 1,
+        itemStyle: {
+          color: '#6c5d7f'
+        }
+      },
+      {
+        name: 'Close-up',
+        value: 1,
+        itemStyle: {
+          color: '#605271'
+        }
+      },
+      {
+        name: 'Medium close-up',
+        value: 1,
+        itemStyle: {
+          color: '#605271'
+        }
+      },
+      {
+        name: 'Medium shot',
+        value: 1,
+        itemStyle: {
+          color: '#544863'
+        }
+      },
+      {
+        name: 'Medium long shot',
+        value: 1,
+        itemStyle: {
+          color: '#483e55'
+        }
+      },
+      {
+        name: 'Long shot',
+        value: 1,
+        itemStyle: {
+          color: '#3c3447'
+        }
+      },
+      {
+        name: 'Extreme long shot',
+        value: 1,
+        itemStyle: {
+          color: '#302938'
+        }
+      }
+    ]
+  },
+
+  {
+    name: 'Angle',
+    itemStyle: {
+      color: '#416692'
+    },
+    children: [
+      {
+        name: 'High angle',
+        value: 1,
+        itemStyle: {
+          color: '#3b5c83'
+        }
+      },
+      {
+        name: 'Low angle',
+        value: 1,
+        itemStyle: {
+          color: '#345275'
+        }
+      },
+      {
+        name: "Bird's eye view",
+        value: 1,
+        itemStyle: {
+          color: '#2e4766'
+        }
+      },
+      {
+        name: "Worm's eye view",
+        value: 1,
+        itemStyle: {
+          color: '#273d58'
+        }
+      },
+      {
+        name: 'Diagonal angle',
+        value: 1,
+        itemStyle: {
+          color: '#213349'
+        }
+      },
+      {
+        name: 'Profile shot',
+        value: 1,
+        itemStyle: {
+          color: '#1a293a'
+        }
+      },
+      {
+        name: 'Back shot',
+        value: 1,
+        itemStyle: {
+          color: '#141f2c'
+        }
+      }
+    ]
+  },
+
+  {
+    name: 'Composition',
+    itemStyle: {
+      color: '#8c7f64'
+    },
+    children: [
+      {
+        name: 'Symmertrical',
+        value: 1,
+        itemStyle: {
+          color: '#7e725a'
+        }
+      },
+      {
+        name: 'Central',
+        value: 1,
+        itemStyle: {
+          color: '#706650'
+        }
+      },
+      {
+        name: 'Diagonal',
+        value: 1,
+        itemStyle: {
+          color: '#625946'
+        }
+      },
+      {
+        name: 'Rule of thirds',
+        value: 1,
+        itemStyle: {
+          color: '#544c3c'
+        }
+      },
+      {
+        name: 'Framing',
+        value: 1,
+        itemStyle: {
+          color: '#464032'
+        }
+      },
+      {
+        name: 'Curved line',
+        value: 1,
+        itemStyle: {
+          color: '#383328'
+        }
+      },
+      {
+        name: 'Horizontal',
+        value: 1,
+        itemStyle: {
+          color: '#2a261e'
+        }
+      }
+    ]
+  },
+  {
+    name: 'Movement',
+    itemStyle: {
+      color: '#484848'
+    },
+    children: [
+      {
+        name: 'Dolly',
+        value: 1,
+        itemStyle: {
+          color: '#414141'
+        }
+      },
+      {
+        name: 'Pedestal',
+        value: 1,
+        itemStyle: {
+          color: '#3a3a3a'
+        }
+      },
+      {
+        name: 'Truck',
+        value: 1,
+        itemStyle: {
+          color: '#323232'
+        }
+      },
+      {
+        name: 'Pan',
+        value: 1,
+        itemStyle: {
+          color: '#2b2b2b'
+        }
+      },
+      {
+        name: 'Tilt',
+        value: 1,
+        itemStyle: {
+          color: '#242424'
+        }
+      },
+
+      {
+        name: 'Roll',
+        value: 1,
+        itemStyle: {
+          color: '#1d1d1d'
+        }
+      },
+      {
+        name: 'Zoom',
+        value: 1,
+        itemStyle: {
+          color: '#161616'
+        }
+      },
+      {
+        name: 'Static',
+        value: 1,
+        itemStyle: {
+          color: '#000000'
+        }
+      }
+    ]
+  },
+  {
+    name: 'Focal length',
+    itemStyle: {
+      color: '#9e7677'
+    },
+    children: [
+      {
+        name: 'Standard lens',
+        value: 1.2,
+        itemStyle: {
+          color: '#8e6a6b'
+        }
+      },
+      {
+        name: 'Telephoto lens',
+        value: 1.2,
+        itemStyle: {
+          color: '#7e5e5f'
+        }
+      },
+      {
+        name: 'Fisheye lens',
+        value: 1.2,
+        itemStyle: {
+          color: '#6f5353'
+        }
+      },
+      {
+        name: 'Macro lens',
+        value: 1.2,
+        itemStyle: {
+          color: '#5f4747'
+        }
+      }
+    ]
+  },
+  {
+    name: 'Color',
+    itemStyle: {
+      color: '#6a4548'
+    },
+    children: [
+      {
+        name: 'Red',
+        value: 1,
+        itemStyle: {
+          color: '#5f3e41'
+        }
+      },
+      {
+        name: 'Yellow',
+        value: 1,
+        itemStyle: {
+          color: '#55373a'
+        }
+      },
+      {
+        name: 'Blue',
+        value: 1,
+        itemStyle: {
+          color: '#4a3032'
+        }
+      },
+      {
+        name: 'Green',
+        value: 1,
+        itemStyle: {
+          color: '#40292b'
+        }
+      },
+      {
+        name: 'Purple',
+        value: 1,
+        itemStyle: {
+          color: '#352324'
+        }
+      },
+      {
+        name: 'Black and white',
+        value: 1,
+        itemStyle: {
+          color: '#2a1c1d'
+        }
+      }
+    ]
+  },
+  {
+    name: 'Lighting',
+    itemStyle: {
+      color: '#781528'
+    },
+    children: [
+      {
+        name: 'Top light',
+        value: 1,
+        itemStyle: {
+          color: '#6c1324'
+        }
+      },
+      {
+        name: 'Side light',
+        value: 1,
+        itemStyle: {
+          color: '#601120'
+        }
+      },
+      {
+        name: 'Back Light',
+        value: 1,
+        itemStyle: {
+          color: '#540f1c'
+        }
+      },
+      {
+        name: 'Soft light',
+        value: 1,
+        itemStyle: {
+          color: '#480d18'
+        }
+      },
+      {
+        name: 'Hard light',
+        value: 1,
+        itemStyle: {
+          color: '#3c0b14'
+        }
+      },
+      {
+        name: 'Low key',
+        value: 1,
+        itemStyle: {
+          color: '#300810'
+        }
+      },
+      {
+        name: 'High key',
+        value: 1,
+        itemStyle: {
+          color: '#24060c'
+        }
+      }
+    ]
+  }
+];
+option = {
+  series: {
+    type: 'sunburst',
+    data: data,
+    radius: [0, '95%'],
+    sort: undefined,
+    emphasis: {
+      focus: 'ancestor'
+    },
+    levels: [
+      {},
+      {
+        r0: '15%',
+        r: '40%',
+        itemStyle: {
+          borderWidth: 2
+        },
+        label: {
+          rotate: 'tangential',
+          color: 'white',
+          fontWeight: 'bold',
+          fontSize: 10
+        }
+      },
+      {
+        r0: '40%',
+        r: '80%',
+        label: {
+          align: 'right',
+          color: 'white',
+          fontWeight: 'bold',
+          fontSize: 10
+        }
+      }
+    ]
+  }
+};
+
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

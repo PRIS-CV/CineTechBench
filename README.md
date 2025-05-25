@@ -49,7 +49,7 @@ We would like to thank the contributors to the [Wan2.1](https://github.com/Wan-V
 If you have any question please feel free to mail to wangxr@bupt.edu.cn.
 
 
-## Citation
+## 🔗 Citation
 ```Text
 @misc{wang2025cinetechbenchbenchmarkcinematographictechnique,
       title={CineTechBench: A Benchmark for Cinematographic Technique Understanding and Generation}, 
