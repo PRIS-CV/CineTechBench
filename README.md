@@ -49,7 +49,18 @@ We would like to thank the contributors to the [Wan2.1](https://github.com/Wan-V
 If you have any question please feel free to mail to wangxr@bupt.edu.cn.
 
 
-
+## Citation
+```Text
+@misc{wang2025cinetechbenchbenchmarkcinematographictechnique,
+      title={CineTechBench: A Benchmark for Cinematographic Technique Understanding and Generation}, 
+      author={Xinran Wang and Songyu Xu and Xiangxuan Shan and Yuxuan Zhang and Muxi Diao and Xueyan Duan and Yanhua Huang and Kongming Liang and Zhanyu Ma},
+      year={2025},
+      eprint={2505.15145},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2505.15145}, 
+}
+```
 
 
 
