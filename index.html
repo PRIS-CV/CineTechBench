@@ -54,17 +54,39 @@
     }
     .gallery {
       display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      justify-content: center;
+      flex-direction: column;
+      gap: 32px;
       margin-bottom: 2em;
     }
+    .movie-group {
+      display: flex;
+      gap: 24px;
+      justify-content: flex-start;
+      overflow-x: auto;
+      padding: 12px 0;
+      scrollbar-width: thin;
+      scrollbar-color: #3b82f6 #f0f0f0;
+    }
+    .movie-group::-webkit-scrollbar {
+      height: 8px;
+    }
+    .movie-group::-webkit-scrollbar-track {
+      background: #f0f0f0;
+      border-radius: 4px;
+    }
+    .movie-group::-webkit-scrollbar-thumb {
+      background: #3b82f6;
+      border-radius: 4px;
+    }
+    .movie-group::-webkit-scrollbar-thumb:hover {
+      background: #2563eb;
+    }
     .gallery-item {
+      flex: 0 0 270px;
       background: #fafbfc;
       border-radius: 8px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.04);
       padding: 12px;
-      width: 270px;
       text-align: center;
     }
     .gallery-item video {
@@ -132,7 +154,8 @@
     </div>
     <div class="links">
       <a href="https://arxiv.org/abs/2505.15145" target="_blank">arXiv</a>
-      <!-- <a href="#">Code (Coming Soon)</a> -->
+      <a href="https://github.com/PRIS-CV/CineTechBench" target="_blank">Code</a>
+      <a href="https://cinetechbench.github.io/" target="_blank">Dataset (Partail Upload-Reorganizing)</a>
     </div>
     <div class="abstract">
       <b>Abstract:</b> We present CineTechBench, a pioneering benchmark founded on precise, manual annotation by seasoned cinematography experts across key cinematography dimensions. Our benchmark covers seven essential aspects—shot scale, shot angle, composition, camera movement, lighting, color, and focal length—and includes over 600 annotated movie images and 120 movie clips with clear cinematographic techniques. Please explore our results below. 
@@ -150,114 +173,176 @@
 
     <div class="section-title">Camera Movement Generation</div>
     <div class="gallery">
-      <div class="gallery-item">
-        <video controls poster="asset/firstframes/005_The Matrix_first_frame.jpg">
-          <source src="asset/gen_results/original_clips/005_The Matrix.mp4" type="video/mp4">
-          
-        </video>
-        <div class="caption">Original Clip: The Matrix</div>
-      </div>
-      <div class="gallery-item">
-        <video controls poster="asset/firstframes/005_The Matrix_first_frame.jpg">
-          <source src="asset/gen_results/wan/gen_720p_005_The Matrix.mp4" type="video/mp4">
-
-        </video>
-        <div class="caption">Wan2.1-FLF-14B-720P</div>
-      </div>
-      <div class="gallery-item">
-        <video controls poster="asset/firstframes/005_The Matrix_first_frame.jpg">
-          <source src="asset/gen_results/kling/gen_720p_005_The Matrix.mp4" type="video/mp4">
-
-        </video>
-        <div class="caption">Klingv1.6-FLF</div>
-      </div>
-      <div class="gallery-item">
-        <video controls poster="asset/firstframes/005_The Matrix_first_frame.jpg">
-          <source src="asset/gen_results/hunyuan/gen_720p_005_The Matrix.mp4" type="video/mp4">
-
-        </video>
-        <div class="caption">HunyuanVideo-I2V</div>
-      </div>
-
-      <div class="gallery-item">
-        <video controls poster="asset/firstframes/081_Mad Max_ Fury Road_first_frame.jpg">
-          <source src="asset/gen_results/original_clips/081_Mad Max_ Fury Road.mp4" type="video/mp4">
-          
-        </video>
-        <div class="caption">Original Clip: Mad Max: Fury Road</div>
-      </div>
-      <div class="gallery-item">
-        <video controls poster="asset/firstframes/081_Mad Max_ Fury Road_first_frame.jpg">
-          <source src="asset/gen_results/wan/gen_720p_081_Mad Max_ Fury Road.mp4" type="video/mp4">
-        </video>
-        <div class="caption">Wan2.1-FLF-14B-720P</div>
-      </div>
-      <div class="gallery-item">
-        <video controls poster="asset/firstframes/081_Mad Max_ Fury Road_first_frame.jpg">
-          <source src="asset/gen_results/kling/gen_720p_081_Mad Max_ Fury Road.mp4" type="video/mp4">
-        </video>
-        <div class="caption">Klingv1.6-FLF</div>
-      </div>
-      <div class="gallery-item">
-        <video controls poster="asset/firstframes/081_Mad Max_ Fury Road_first_frame.jpg">
-          <source src="asset/gen_results/hunyuan/gen_720p_081_Mad Max_ Fury Road.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="caption">HunyuanVideo-I2V</div>
+      <!-- The Matrix Group -->
+      <div class="movie-group">
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/005_The Matrix_first_frame.jpg">
+            <source src="asset/gen_results/original_clips/005_The Matrix.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Original Clip: The Matrix</div>
+        </div>
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/005_The Matrix_first_frame.jpg">
+            <source src="asset/gen_results/wan/gen_720p_005_The Matrix.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Wan2.1-FLF-14B-720P</div>
+        </div>
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/005_The Matrix_first_frame.jpg">
+            <source src="asset/gen_results/kling/gen_720p_005_The Matrix.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Klingv1.6-FLF</div>
+        </div>
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/005_The Matrix_first_frame.jpg">
+            <source src="asset/gen_results/hunyuan/gen_720p_005_The Matrix.mp4" type="video/mp4">
+          </video>
+          <div class="caption">HunyuanVideo-I2V</div>
+        </div>
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/005_The Matrix_first_frame.jpg">
+            <source src="asset/gen_results/gen4turbo/gen_720p_005_The Matrix.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Gen4turbo</div>
+        </div>
       </div>
 
-      <div class="gallery-item">
-        <video controls poster="asset/firstframes/114_Moonrise Kingdom_first_frame.jpg">
-          <source src="asset/gen_results/original_clips/114_Moonrise Kingdom.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="caption">Original Clip: Moonrise Kingdom</div>
-      </div>
-      <div class="gallery-item">
-        <video controls poster="asset/firstframes/114_Moonrise Kingdom_first_frame.jpg">
-          <source src="asset/gen_results/wan/gen_720p_114_Moonrise Kingdom.mp4" type="video/mp4">
-          
-        </video>
-        <div class="caption">Wan2.1-FLF-14B-720P</div>
-      </div>
-      <div class="gallery-item">
-        <video controls poster="asset/firstframes/114_Moonrise Kingdom_first_frame.jpg">
-          <source src="asset/gen_results/kling/gen_720p_114_Moonrise Kingdom.mp4" type="video/mp4">
-        </video>  
-        <div class="caption">Klingv1.6-FLF</div>
-      </div>
-      <div class="gallery-item">
-        <video controls poster="asset/firstframes/114_Moonrise Kingdom_first_frame.jpg">
-          <source src="asset/gen_results/hunyuan/gen_720p_114_Moonrise Kingdom.mp4" type="video/mp4">
-        </video>
-        <div class="caption">HunyuanVideo-I2V</div>
-      </div>
-
-      <div class="gallery-item">
-        <video controls poster="asset/firstframes/111_Fast & Furious 7_first_frame.jpg">
-          <source src="asset/gen_results/original_clips/111_Fast & Furious 7.mp4" type="video/mp4">
-        </video>
-        <div class="caption">Original Clip: Fast & Furious 7</div>
-      </div>
-      <div class="gallery-item">
-        <video controls poster="asset/firstframes/111_Fast & Furious 7_first_frame.jpg">
-          <source src="asset/gen_results/wan/gen_720p_111_Fast & Furious 7.mp4" type="video/mp4">
-        </video>
-        <div class="caption">Wan2.1-FLF-14B-720P</div>
-      </div>
-      <div class="gallery-item">
-        <video controls poster="asset/firstframes/111_Fast & Furious 7_first_frame.jpg">
-          <source src="asset/gen_results/kling/gen_720p_111_Fast & Furious 7.mp4" type="video/mp4">
-        </video>
-        <div class="caption">Klingv1.6-FLF</div>
-      </div>
-      <div class="gallery-item">
-        <video controls poster="asset/firstframes/111_Fast & Furious 7_first_frame.jpg">
-          <source src="asset/gen_results/hunyuan/gen_720p_111_Fast & Furious 7.mp4" type="video/mp4">
-        </video>
-        <div class="caption">HunyuanVideo-I2V</div>
+      <!-- Mad Max Group -->
+      <div class="movie-group">
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/081_Mad Max_ Fury Road_first_frame.jpg">
+            <source src="asset/gen_results/original_clips/081_Mad Max_ Fury Road.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Original Clip: Mad Max: Fury Road</div>
+        </div>
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/081_Mad Max_ Fury Road_first_frame.jpg">
+            <source src="asset/gen_results/wan/gen_720p_081_Mad Max_ Fury Road.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Wan2.1-FLF-14B-720P</div>
+        </div>
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/081_Mad Max_ Fury Road_first_frame.jpg">
+            <source src="asset/gen_results/kling/gen_720p_081_Mad Max_ Fury Road.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Klingv1.6-FLF</div>
+        </div>
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/081_Mad Max_ Fury Road_first_frame.jpg">
+            <source src="asset/gen_results/hunyuan/gen_720p_081_Mad Max_ Fury Road.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="caption">HunyuanVideo-I2V</div>
+        </div>
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/081_Mad Max_ Fury Road_first_frame.jpg">
+            <source src="asset/gen_results/gen4turbo/gen_720p_081_Mad Max_ Fury Road.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Gen4turbo</div>
+        </div>
       </div>
 
+      <!-- Moonrise Kingdom Group -->
+      <div class="movie-group">
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/114_Moonrise Kingdom_first_frame.jpg">
+            <source src="asset/gen_results/original_clips/114_Moonrise Kingdom.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Original Clip: Moonrise Kingdom</div>
+        </div>
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/114_Moonrise Kingdom_first_frame.jpg">
+            <source src="asset/gen_results/wan/gen_720p_114_Moonrise Kingdom.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Wan2.1-FLF-14B-720P</div>
+        </div>
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/114_Moonrise Kingdom_first_frame.jpg">
+            <source src="asset/gen_results/kling/gen_720p_114_Moonrise Kingdom.mp4" type="video/mp4">
+          </video>  
+          <div class="caption">Klingv1.6-FLF</div>
+        </div>
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/114_Moonrise Kingdom_first_frame.jpg">
+            <source src="asset/gen_results/hunyuan/gen_720p_114_Moonrise Kingdom.mp4" type="video/mp4">
+          </video>
+          <div class="caption">HunyuanVideo-I2V</div>
+        </div>
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/114_Moonrise Kingdom_first_frame.jpg">
+            <source src="asset/gen_results/gen4turbo/gen_720p_114_Moonrise Kingdom.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Gen4turbo</div>
+        </div>
+      </div>
+
+      <!-- Fast & Furious Group -->
+      <div class="movie-group">
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/111_Fast & Furious 7_first_frame.jpg">
+            <source src="asset/gen_results/original_clips/111_Fast & Furious 7.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Original Clip: Fast & Furious 7</div>
+        </div>
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/111_Fast & Furious 7_first_frame.jpg">
+            <source src="asset/gen_results/wan/gen_720p_111_Fast & Furious 7.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Wan2.1-FLF-14B-720P</div>
+        </div>
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/111_Fast & Furious 7_first_frame.jpg">
+            <source src="asset/gen_results/kling/gen_720p_111_Fast & Furious 7.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Klingv1.6-FLF</div>
+        </div>
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/111_Fast & Furious 7_first_frame.jpg">
+            <source src="asset/gen_results/hunyuan/gen_720p_111_Fast & Furious 7.mp4" type="video/mp4">
+          </video>
+          <div class="caption">HunyuanVideo-I2V</div>
+        </div>
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/111_Fast & Furious 7_first_frame.jpg">
+            <source src="asset/gen_results/gen4turbo/gen_720p_111_Fast & Furious 7.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Gen4turbo</div>
+        </div>
+      </div>
+
+      <!-- The Black Panther Group -->
+      <div class="movie-group">
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/113_Black Panther_first_frame.jpg">
+            <source src="asset/gen_results/original_clips/113_Black Panther.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Original Clip: Black Panther</div>
+        </div>
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/113_Black Panther_first_frame.jpg">
+            <source src="asset/gen_results/wan/gen_720p_113_Black Panther.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Wan2.1-FLF-14B-720P</div>
+        </div>
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/113_Black Panther_first_frame.jpg">
+            <source src="asset/gen_results/kling/gen_720p_113_Black Panther.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Klingv1.6-FLF</div>
+        </div>
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/113_Black Panther_first_frame.jpg">
+            <source src="asset/gen_results/hunyuan/gen_720p_113_Black Panther.mp4" type="video/mp4">
+          </video>
+          <div class="caption">HunyuanVideo-I2V</div>
+        </div>
+        <div class="gallery-item">
+          <video controls poster="asset/firstframes/113_Black Panther_first_frame.jpg">
+            <source src="asset/gen_results/gen4turbo/gen_720p_113_Black Panther.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Gen4turbo</div>
+        </div>
+      </div>
     </div>
     
 
@@ -272,6 +357,10 @@
   url={https://arxiv.org/abs/2505.15145},
 }
     </pre>
+  </div>
+  <div class="section-title">Copyright</div>
+  <div class="copyright">
+    We fully respect the copyright of all films and do not use any clips for commercial purposes. Instead of distributing or hosting video content, we only provide links to publicly available, authorized sources (e.g., official studio or distributor channels). All assets are credited to their original rights holders, and our use of these links falls under fair‐use provisions for non‐commercial, academic research.
   </div>
 </body>
 </html>
