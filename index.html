@@ -186,6 +186,50 @@
       background: #ccc;
       cursor: not-allowed;
     }
+
+    /* 添加模态框样式 */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      overflow: auto;
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 90vh;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .close-button {
+      position: absolute;
+      right: 25px;
+      top: 15px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .close-button:hover {
+      color: #bbb;
+    }
+
+    /* 添加鼠标手型提示可点击 */
+    .slide {
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -211,19 +255,24 @@
     <div class="section-title">Cinematographic Taxonomy</div>
     <iframe src="./asset/tax.html" style="width: 100%; height: 512px; border: none;"></iframe>
 
-    <!-- 左右箭头切换图片集合 -->
     <div class="section-title">Cinematographic Technique Understanding</div>
     <div class="image-slider">
       <button class="slider-button prev" onclick="changeSlide(-1)">❮</button>
       <div class="slider-container">
-        <img src="asset/qa_results/Color.png" alt="Color" class="slide active">
-        <img src="asset/qa_results/Angle.png" alt="Angle" class="slide">
-        <img src="asset/qa_results/Focal length.png" alt="Focal Length" class="slide">
-        <img src="asset/qa_results/Lighting.png" alt="Lighting" class="slide">
-        <img src="asset/qa_results/Scale-n5.png" alt="Scale" class="slide">
-        <img src="asset/qa_results/Composition.png" alt="Composition" class="slide">
+        <img src="asset/qa_results/Color.png" alt="Color" class="slide active" onclick="openModal(this)">
+        <img src="asset/qa_results/Angle.png" alt="Angle" class="slide" onclick="openModal(this)">
+        <img src="asset/qa_results/Focal length.png" alt="Focal Length" class="slide" onclick="openModal(this)">
+        <img src="asset/qa_results/Lighting.png" alt="Lighting" class="slide" onclick="openModal(this)">
+        <img src="asset/qa_results/Scale-n5.png" alt="Scale" class="slide" onclick="openModal(this)">
+        <img src="asset/qa_results/Scale-n4.png" alt="Composition" class="slide" onclick="openModal(this)">
       </div>
       <button class="slider-button next" onclick="changeSlide(1)">❯</button>
+    </div>
+
+    <!-- 添加模态框 -->
+    <div id="imageModal" class="modal">
+      <span class="close-button" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImage">
     </div>
 
     <div class="section-title">Camera Movement Generation</div>
@@ -433,6 +482,33 @@
     
     // 初始化按钮状态
     document.querySelector('.prev').disabled = true;
+
+    // 添加模态框功能
+    function openModal(img) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    }
+
+    function closeModal() {
+      document.getElementById('imageModal').style.display = "none";
+    }
+
+    // 点击模态框背景也可以关闭
+    window.onclick = function(event) {
+      const modal = document.getElementById('imageModal');
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+    // 添加键盘ESC键关闭功能
+    document.addEventListener('keydown', function(event) {
+      if (event.key === "Escape") {
+        closeModal();
+      }
+    });
   </script>
 </body>
 </html>
