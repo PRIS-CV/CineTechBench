@@ -34,6 +34,45 @@ We present CineTechBench, a pioneering benchmark founded on precise, manual anno
 - [ ] Camera trajectory similarity calculation script
 
 
+## 💾 Environment
+
+Create the conda environment:
+```bash
+conda create -n ctbench python=3.11 -y
+conda activate ctbench
+```
+
+Install pytorch (e.g, cuda 12.4) and transformers
+```
+pip install torch==2.5.0 torchvision==0.20.0 torchaudio==2.5.0 --index-url https://download.pytorch.org/whl/cu124
+pip install transformers==4.51.3
+```
+
+Install flash-attn
+```
+pip install flash-attn
+```
+
+For prepare another conda environment following the instruction in [MonST3R](https://monst3r-project.github.io/) for estimating camera trajectory from input video.
+
+
+## 📊 Evaluation
+
+**Camera Movement Generation**
+
+Before evaluation, you should first prepare the generated videos and the original film clips. Then use [MonST3R](https://monst3r-project.github.io/) to estimate their camera trajectory. The result folder should be arranged like:
+
+```text
+- original_clips
+  - result for movie clip 1 
+  - result for movie clip 2
+- wani2v_ct
+  - result for generated movie clip 1 
+  - result for generated movie clip 2
+```
+
+After preparing the camera trajectory estimation results, please use `eval/eval_ct.sh` to summary the results.
+
 
 
 ## 💽 Copyright
