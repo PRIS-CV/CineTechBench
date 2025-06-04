@@ -34,6 +34,10 @@ We present CineTechBench, a pioneering benchmark founded on precise, manual anno
 - [ ] Description evaluation script
 
 
+## Prepare Benchmark
+Due to the copyright, we cannot distributed the movie clips and images directly, here we provide [instructions](dataset/README.md) to download and preprocess the data in our benchmark. The image links are under organizing, will release as soon as possible.
+
+
 ## 💾 Environment
 
 Create the conda environment:

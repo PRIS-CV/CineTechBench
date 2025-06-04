@@ -1,7 +1,7 @@
 # Benchmark Preparation 
 This is a introduction on how to prepare our benchmark.
 
-## Download from annotation huggingface
+## Download annotation from huggingface
 
 ```bash
 cd dataset
