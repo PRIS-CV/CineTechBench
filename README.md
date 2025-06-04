@@ -27,11 +27,11 @@ We present CineTechBench, a pioneering benchmark founded on precise, manual anno
 
 
 ## 📌 TODO
-- [ ] Video extraction script for movie clips
+- [x] Video extraction script for movie clips
+- [x] Camera trajectory similarity calculation script
 - [ ] Movie image link organization and documentation
 - [ ] Question-answering evaluation script
 - [ ] Description evaluation script
-- [ ] Camera trajectory similarity calculation script
 
 
 ## 💾 Environment
@@ -53,7 +53,7 @@ Install flash-attn
 pip install flash-attn
 ```
 
-For prepare another conda environment following the instruction in [MonST3R](https://monst3r-project.github.io/) for estimating camera trajectory from input video.
+Please prepare another conda environment following the instruction in [MonST3R](https://monst3r-project.github.io/) for estimating camera trajectory from input video.
 
 
 ## 📊 Evaluation

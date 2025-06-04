@@ -172,3 +172,8 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Ignore all files in clips and raw folders
+clips/
+raw/
+annotation/
