@@ -29,13 +29,13 @@ We present CineTechBench, a pioneering benchmark founded on precise, manual anno
 ## 📌 TODO
 - [x] Video extraction script for movie clips
 - [x] Camera trajectory similarity calculation script
-- [ ] Movie image link organization and documentation
+- [x] Movie image link organization and documentation
 - [ ] Question-answering evaluation script
 - [ ] Description evaluation script
 
 
 ## Prepare Benchmark
-Due to the copyright, we cannot distributed the movie clips and images directly, here we provide [instructions](dataset/README.md) to download and preprocess the data in our benchmark. The image links are under organizing, will release as soon as possible.
+Due to the copyright, we cannot distributed the movie clips and images directly, here we provide [instructions](dataset/README.md) to download and preprocess the data in our benchmark. We upload the all image links in `image_annotation` file in our [CineTechBench HF Repo](https://huggingface.co/datasets/Xinran0906/CineTechBench).
 
 
 ## 💾 Environment
