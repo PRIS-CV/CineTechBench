@@ -6,9 +6,11 @@
 
 <div align="center">
 <a href="https://pris-cv.github.io/CineTechBench/"><img src="https://img.shields.io/static/v1?label=Project&message=Github&color=blue&logo=github-pages"></a> &ensp;
-<a href="http://arxiv.org/abs/2505.15145"><img src="https://img.shields.io/static/v1?label=Arxiv&message=CineTechBench&color=red&logo=arxiv"></a> &ensp;
-<a href="https://huggingface.co/datasets/Xinran0906/CineTechBench"><img src="https://img.shields.io/static/v1?label=HFDataset&message=CineTechBench&color=yellow"></a> &ensp;
+<a href="http://arxiv.org/abs/2505.15145"><img src="https://img.shields.io/static/v1?label=Arxiv&message=Paper&color=red&logo=arxiv"></a> &ensp;
+<a href="https://www.alphaxiv.org/overview/2505.15145v1"><img src="https://img.shields.io/static/v1?label=alphaXiv&message=Blog&color=red&logo=arxiv"></a> &ensp;
+<a href="https://huggingface.co/datasets/Xinran0906/CineTechBench"><img src="https://img.shields.io/static/v1?label=Dataset&message=CineTechBench&color=yellow&logo=huggingface"></a> &ensp;
 </div>
+
 
 
 
