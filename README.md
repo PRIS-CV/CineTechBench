@@ -32,7 +32,8 @@ We present CineTechBench, a pioneering benchmark founded on precise, manual anno
 - [x] Video extraction script for movie clips
 - [x] Camera trajectory similarity calculation script
 - [x] Movie image link organization and documentation
-- [ ] Question-answering evaluation script
+- [x] Video Question-answering evaluation script
+- [ ] Image Question-answering evaluation script
 - [ ] Description evaluation script
 
 
@@ -63,6 +64,14 @@ Please prepare another conda environment following the instruction in [MonST3R](
 
 
 ## 📊 Evaluation
+
+**Camera Movement Question Answering**
+
+We provide an example to evaluate Gemini. Please set following paths in `eval/video_qa_gemini-2.5-pro.py` and then run it to evaluate.
+```
+JSON_DATA_PATH = r""
+VIDEO_FOLDER_PATH = r""
+```
 
 **Camera Movement Generation**
 
