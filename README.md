@@ -67,10 +67,9 @@ Please prepare another conda environment following the instruction in [MonST3R](
 
 **Camera Movement Question Answering**
 
-We provide an example to evaluate Gemini. Please set following paths in `eval/video_qa_gemini-2.5-pro.py` and then run it to evaluate.
+We provide an example to evaluate Gemini-2.5-Pro.
 ```
-JSON_DATA_PATH = r""
-VIDEO_FOLDER_PATH = r""
+python video_qa_gemini_2.5_pro.py --json_path /path/to/your/video_annotation.json --video_path /path/to/your/video_folder
 ```
 
 **Camera Movement Generation**

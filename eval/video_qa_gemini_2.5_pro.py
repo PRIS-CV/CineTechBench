@@ -3,58 +3,118 @@ import json
 import re
 import time
 import random
+import argparse
 from datetime import datetime
-# 请根据实际使用的 Gemini SDK 调整导入
+from typing import List, Dict, Any, Optional
 from google import genai
 from google.genai import types
+from google.api_core import exceptions
 import base64
-# === 配置区 ===
 
-JSON_DATA_PATH = r""
-VIDEO_FOLDER_PATH = r""
-client = genai.Client(api_key="xxxxxxxxxxxxx")
-# Gemini 模型参数
+"""
+
+Video Question Answering Script using Gemini 2.5 Pro.
+
+How to Run:
+    python video_qa_gemini_2.5_pro.py --json_path /path/to/your/video_annotation.json --video_path /path/to/your/video_folder
+
+Output files:
+    - results-Gemini-2.5-Pro.json: Contains detailed results for each video
+    - summary-Gemini-2.5-Pro.json: Contains overall accuracy and statistics
+    
+"""
+
+# Replace with your actual API key
+API_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 
+# Model name, used for naming the output files
 MODEL_NAME = "Gemini-2.5-Pro"
+# Model code, used for API calls
+model='gemini-2.5-pro-preview-03-25'
 
-script_path = os.path.abspath(__file__)
-script_directory = os.path.dirname(script_path)
-print(f"Script Path: {script_directory}")
-
-RESULT_JSON_PATH = os.path.join(script_directory, f"results-{MODEL_NAME}-added.json")
-SUMMARY_JSON_PATH = os.path.join(script_directory, f"summary-{MODEL_NAME}-added.json")
-print (f"Result JSON Path: {RESULT_JSON_PATH}")
-
-MAX_RETRIES = 10 # Placeholder
-WAIT_SECONDS = 5 # Placeholder
-ANSWER_RETRIES = 2 # Placeholder
+# Retry logic parameters
+MAX_API_RETRIES = 5
+API_WAIT_SECONDS = 5
+MAX_ANSWER_RETRIES = 2
 
 # === HELPER FUNCTIONS ===
 
-def load_video_data(json_path):
-    with open(json_path, 'r', encoding='utf-8') as f:
-        data = json.load(f)
+def setup_arg_parser() -> argparse.ArgumentParser:
+    """Sets up the command-line argument parser."""
+    parser = argparse.ArgumentParser(
+        description="Run Video QA evaluation with Gemini.",
+        formatter_class=argparse.RawTextHelpFormatter # For better help text formatting
+    )
+    parser.add_argument(
+        '-j', '--json_path',
+        type=str,
+        required=True,
+        help="Path to the input JSON file containing video annotations and QA data."
+    )
+    parser.add_argument(
+        '-v', '--video_path',
+        type=str,
+        required=True,
+        help="Path to the folder containing the video files."
+    )
+    return parser
+
+def load_video_data(json_path: str) -> List[Dict[str, Any]]:
+    """
+    Loads video QA data from a JSON file formatted as a list of dictionaries.
+
+    Args:
+        json_path: The path to the input JSON file.
+
+    Returns:
+        A list of dictionaries, where each dictionary contains the
+        processed information for one video item.
+    """
+    print(f"🔄 Loading data from {json_path}...")
+    try:
+        with open(json_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+    except FileNotFoundError:
+        print(f"❌ ERROR: JSON file not found at {json_path}")
+        return []
+    except json.JSONDecodeError:
+        print(f"❌ ERROR: Could not decode JSON from {json_path}. Please check its format.")
+        return []
+
     items = []
-    for fname, details in data.items():
-        qa = details.get('QA', {})
+    # The new JSON is a list of objects, so we iterate through it directly.
+    for item in data:
+        qa = item.get('QA', {})
         if 'prompt' in qa and 'answer' in qa:
             items.append({
-                'VideoFilename': fname,
-                'Original_Type': details.get('Original_Type', 'N/A'),
-                'Classification': details.get('Classification', 'N/A'),
+                # Mapping new keys from the JSON to the keys expected by the script
+                'VideoFilename': item.get('video_name', 'N/A'),
+                'ID': item.get('id', 'N/A'),
+                'movie_id': item.get('movie_id', 'N/A'),
+                'Original_Type': item.get('type', 'N/A'),
+                'Classification': item.get('classification', 'N/A'),
                 'Prompt': qa['prompt'],
                 'GroundTruth': qa['answer'],
-                'AnswerMapping': extract_answer_mapping(qa['prompt']) # Extract answer mapping
+                'AnswerMapping': extract_answer_mapping(qa['prompt'])
             })
+    print(f"✅ Loaded {len(items)} items successfully.")
     return items
 
-def extract_answer_mapping(prompt):
-    """Extracts the mapping from answer letter (A, B, C, D) to shot type string from the prompt."""
+def extract_answer_mapping(prompt: str) -> Dict[str, str]:
+    """
+    Extracts the mapping from answer letter (A, B, C, D) to the shot
+    type string from the prompt text.
+
+    Args:
+        prompt: The full text of the prompt sent to the model.
+
+    Returns:
+        A dictionary mapping the option letter to its description.
+        Example: {'A': 'Pan Left Shot', 'B': 'Crane Shot'}
+    """
     mapping = {}
-    # Regex to find lines starting with A., B., C., D. and capture the text following it
-    # Adjust regex if the format is different (e.g., includes parentheses)
+    # Regex to find lines starting with A., B., C., or D. and capture the text.
     matches = re.findall(r'([A-D])\.\s*(.*)', prompt)
     for letter, text in matches:
-        # Clean up the extracted text, removing potential trailing periods or spaces
         mapping[letter.upper()] = text.strip()
     return mapping
 
@@ -63,13 +123,33 @@ def extract_answer_mapping(prompt):
 #     # Keep your original GEMINI function here.
 #     pass # Placeholder
 
-def Model(video_path, question, client, max_retries=MAX_RETRIES, wait_seconds=WAIT_SECONDS):
+def call_model(
+    video_path: str,
+    question: str,
+    max_retries: int = MAX_API_RETRIES,
+    wait_seconds: int = API_WAIT_SECONDS
+) -> str:
+    """
+    Sends a video and a question to the Gemini model and gets a response.
+    Includes retry logic for handling transient API errors.
+
+    Args:
+        video_path: The file path to the video.
+        question: The prompt/question for the model.
+        client: The initialized Gemini model client.
+        max_retries: The maximum number of times to retry the API call.
+        wait_seconds: The number of seconds to wait between retries.
+
+    Returns:
+        The text response from the model, or an error message if all retries fail.
+    """
+    client = genai.Client(api_key=API_KEY)
     video_bytes = open(video_path, 'rb').read()
     attempt = 0
     while attempt < max_retries:
         try:
             response = client.models.generate_content(
-                model='models/gemini-2.5-pro-preview-03-25',
+                model=model,
                 contents=types.Content(
                     parts=[
                         types.Part(text=question),
@@ -77,7 +157,6 @@ def Model(video_path, question, client, max_retries=MAX_RETRIES, wait_seconds=WA
                     ]
                 )
             )
-            print(response.text)
             return response.text
         except Exception as e:
             attempt += 1
@@ -85,47 +164,81 @@ def Model(video_path, question, client, max_retries=MAX_RETRIES, wait_seconds=WA
             time.sleep(wait_seconds)
     return "ERROR: Max retries exceeded"
 
-def extract_answer(raw):
-    m = re.match(r'^\(?([A-Ga-g])\)?\.?$', raw.strip())
-    return m.group(1).upper() if m else "N/A"
+def extract_answer(raw_text: str) -> str:
+    """
+    Extracts a single letter answer (A, B, C, or D) from the model's raw output.
 
-# === 主流程 ===
+    Args:
+        raw_text: The raw string response from the Gemini model.
+
+    Returns:
+        The uppercase letter if found, otherwise 'N/A'.
+    """
+    if not isinstance(raw_text, str):
+        return "N/A"
+    # This regex matches an optional opening parenthesis, a single letter (a-d),
+    # an optional closing parenthesis, and an optional period.
+    match = re.match(r'^\s*\(?([A-Da-d])\)?\.?\s*$', raw_text.strip())
+    return match.group(1).upper() if match else "N/A"
+
+# === MAIN WORKFLOW ===
 
 def main():
-    # Ensure client is initialized if not globally
-    # client = genai.Client(api_key="YOUR_API_KEY") # Uncomment and replace with your API Key if not global
 
+    """Main function to execute the video QA evaluation workflow."""
+    # 1. Setup and Initialization
+    parser = setup_arg_parser()
+    args = parser.parse_args()
+
+    VIDEO_FOLDER_PATH = args.video_path
+    JSON_DATA_PATH = args.json_path
+
+
+    # Prepare output paths
+    script_directory = os.path.dirname(os.path.abspath(__file__))
+    RESULT_JSON_PATH = os.path.join(script_directory, f"results-{MODEL_NAME}.json")
+    SUMMARY_JSON_PATH = os.path.join(script_directory, f"summary-{MODEL_NAME}.json")
+    print(f"▶️ Script starting. Results will be saved to: {RESULT_JSON_PATH}")
+
+    # 2. Load Data
     data = load_video_data(JSON_DATA_PATH)
+    if not data:
+        print("❌ No data to process. Exiting.")
+        return
+
+    # 3. Process Each Video
     results = []
     total = len(data)
-    print("Idx | Video | GT | Pred | Status") # Simplified print during processing
+    print("\n--- Starting Video Processing ---")
+    print("Idx | Video | GT | Pred | Status")
+    print("-" * 40)
 
     for idx, item in enumerate(data, 1):
-        vid = item['VideoFilename']
-        path = os.path.join(VIDEO_FOLDER_PATH, vid)
+        vid_filename = item['VideoFilename']
+        video_path = os.path.join(VIDEO_FOLDER_PATH, vid_filename)
         prompt = item['Prompt']
         gt = item['GroundTruth']
         cls = item['Classification']
         answer_mapping = item['AnswerMapping'] # Get the stored answer mapping
 
-        if not os.path.isfile(path):
+        if not os.path.isfile(video_path):
             raw = ""
             pred = "ERROR"
             status = "File Not Found"
         else:
-            raw = Model(path, prompt, client)
+            raw = call_model(video_path, prompt)
             pred = extract_answer(raw)
             tries = 0
-            while pred == 'N/A' and tries < ANSWER_RETRIES:
-                print(f"🔄 Retrying answer for {vid} ({tries+1}/{ANSWER_RETRIES})")
-                raw = Model(path, prompt, client)
+            while pred == 'N/A' and tries < MAX_ANSWER_RETRIES:
+                print(f"🔄 Retrying answer for {vid_filename} ({tries+1}/{MAX_ANSWER_RETRIES})")
+                raw = call_model(video_path, prompt)
                 pred = extract_answer(raw.text)
                 tries += 1
             status = 'Completed' if pred not in ['N/A','ERROR'] else 'Error'
         time.sleep(random.uniform(0.5, 1.5)) # Random sleep to avoid rate limiting
         # Save current result
         results.append({
-            'VideoFilename': vid,
+            'VideoFilename': vid_filename,
             'ID': item.get('ID'),
             'movie_id': item.get('movie_id'),
             'Original_Type': item['Original_Type'],
@@ -140,7 +253,7 @@ def main():
         with open(RESULT_JSON_PATH, 'w', encoding='utf-8') as f:
             json.dump({'Results': results}, f, indent=4)
         # Print progress
-        print(f"{idx}/{total} | {vid} | {gt} | {pred} | {status}")
+        print(f"{idx}/{total} | {vid_filename} | {gt} | {pred} | {status}")
 
         # Note: Real-time JSON writing and incremental accuracy calculations are removed from the loop
         # They will be calculated and saved after the loop finishes.
@@ -255,55 +368,55 @@ def main():
         'TotalVideosInData': total,
         'ProcessedCompletedVideos': valid_overall,
         'OverallCorrect': correct_overall,
-        'AccuracyOverall': f"{acc_total:.2%}\n",
+        'AccuracyOverall': f"{acc_total:.2%}",
 
         'FixedValid_SingleOnly': category_counts['Fixed']['total'],
         'FixedCorrect_SingleOnly': category_counts['Fixed']['correct'],
-        'AccuracyFixed_SingleOnly': f"{accuracy_fixed:.2%}\n",
+        'AccuracyFixed_SingleOnly': f"{accuracy_fixed:.2%}",
 
         'TranslationValid_SingleOnly': category_counts['Translation']['total'],
         'TranslationCorrect_SingleOnly': category_counts['Translation']['correct'],
-        'AccuracyTranslation_SingleOnly': f"{accuracy_translation:.2%}\n",
+        'AccuracyTranslation_SingleOnly': f"{accuracy_translation:.2%}",
 
         'RotationValid_SingleOnly': category_counts['Rotation']['total'],
         'RotationCorrect_SingleOnly': category_counts['Rotation']['correct'],
-        'AccuracyRotation_SingleOnly': f"{accuracy_rotation:.2%}\n",
+        'AccuracyRotation_SingleOnly': f"{accuracy_rotation:.2%}",
 
         'ZoomValid_SingleOnly': category_counts['Zoom']['total'],
         'ZoomCorrect_SingleOnly': category_counts['Zoom']['correct'],
-        'AccuracyZoom_SingleOnly': f"{accuracy_zoom:.2%}\n",
+        'AccuracyZoom_SingleOnly': f"{accuracy_zoom:.2%}",
 
         'SingleValid': single_valid,
         'SingleCorrect': single_correct,
-        'AccuracySingle': f"{acc_single:.2%}\n",
+        'AccuracySingle': f"{acc_single:.2%}",
 
         'CombinationalValid': comb_valid,
         'CombinationalCorrect': comb_correct,
-        'AccuracyCombinational': f"{acc_comb:.2%}\n",
+        'AccuracyCombinational': f"{acc_comb:.2%}",
 
         'DollyValid_SingleOnly': category_counts['Dolly']['total'],
         'DollyCorrect_SingleOnly': category_counts['Dolly']['correct'],
-        'AccuracyDolly_SingleOnly': f"{accuracy_dolly:.2%}\n",
+        'AccuracyDolly_SingleOnly': f"{accuracy_dolly:.2%}",
 
         'TiltValid_SingleOnly': category_counts['Tilt']['total'],
         'TiltCorrect_SingleOnly': category_counts['Tilt']['correct'],
-        'AccuracyTilt_SingleOnly': f"{accuracy_tilt:.2%}\n",
+        'AccuracyTilt_SingleOnly': f"{accuracy_tilt:.2%}",
 
         'PanValid_SingleOnly': category_counts['Pan']['total'],
         'PanCorrect_SingleOnly': category_counts['Pan']['correct'],
-        'AccuracyPan_SingleOnly': f"{accuracy_pan:.2%}\n",
+        'AccuracyPan_SingleOnly': f"{accuracy_pan:.2%}",
 
         'TruckingValid_SingleOnly': category_counts['Trucking']['total'],
         'TruckingCorrect_SingleOnly': category_counts['Trucking']['correct'],
-        'AccuracyTrucking_SingleOnly': f"{accuracy_trucking:.2%}\n",
+        'AccuracyTrucking_SingleOnly': f"{accuracy_trucking:.2%}",
 
         'CraneValid_SingleOnly': category_counts['Crane']['total'],
         'CraneCorrect_SingleOnly': category_counts['Crane']['correct'],
-        'AccuracyCrane_SingleOnly': f"{accuracy_crane:.2%}\n",
+        'AccuracyCrane_SingleOnly': f"{accuracy_crane:.2%}",
 
         'RollingValid_SingleOnly': category_counts['Rolling']['total'],
         'RollingCorrect_SingleOnly': category_counts['Rolling']['correct'],
-        'AccuracyRolling_SingleOnly': f"{accuracy_rolling:.2%}\n"
+        'AccuracyRolling_SingleOnly': f"{accuracy_rolling:.2%}"
 
     }
 
