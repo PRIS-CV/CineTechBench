@@ -33,7 +33,7 @@ We present CineTechBench, a pioneering benchmark founded on precise, manual anno
 - [x] Camera trajectory similarity calculation script
 - [x] Movie image link organization and documentation
 - [x] Video Question-answering evaluation script
-- [ ] Image Question-answering evaluation script
+- [x] Image Question-answering evaluation script
 - [ ] Description evaluation script
 
 
@@ -65,9 +65,16 @@ Please prepare another conda environment following the instruction in [MonST3R](
 
 ## 📊 Evaluation
 
+**Image Cinematographuic Dimension Question Answering**
+
+We provide an example to evaluate Gemini-2.5-Pro on image dimensions, e.g, shot angle, lighting, focal length, ..., QA.
+```
+python image_qa_gemini_2.5_pro.py --json_path /path/to/your/image_annotation.json --image_path /path/to/your/image_folder
+```
+
 **Camera Movement Question Answering**
 
-We provide an example to evaluate Gemini-2.5-Pro.
+We provide an example to evaluate Gemini-2.5-Pro on camera movement QA.
 ```
 python video_qa_gemini_2.5_pro.py --json_path /path/to/your/video_annotation.json --video_path /path/to/your/video_folder
 ```
