@@ -25,4 +25,5 @@ mkdir clips
 python clip_videos.py
 ```
 
-## Download the images (comming soon)
+## Download the images
+Please download the images according to the image links in `./annotation/image_annotation.json`

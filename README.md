@@ -65,21 +65,21 @@ Please prepare another conda environment following the instruction in [MonST3R](
 
 ## 📊 Evaluation
 
-**Image Cinematographuic Dimension Question Answering**
+**Image Cinematographic Tech Dimension Question Answering**
 
 We provide an example to evaluate Gemini-2.5-Pro on image dimensions, e.g, shot angle, lighting, focal length, ..., QA.
 ```
 python image_qa_gemini_2.5_pro.py --json_path /path/to/your/image_annotation.json --image_path /path/to/your/image_folder
 ```
 
-**Camera Movement Question Answering**
+**Video Camera Movement Question Answering**
 
 We provide an example to evaluate Gemini-2.5-Pro on camera movement QA.
 ```
 python video_qa_gemini_2.5_pro.py --json_path /path/to/your/video_annotation.json --video_path /path/to/your/video_folder
 ```
 
-**Camera Movement Generation**
+**Video Camera Movement Generation**
 
 Before evaluation, you should first prepare the generated videos and the original film clips. Then use [MonST3R](https://monst3r-project.github.io/) to estimate their camera trajectory. The result folder should be arranged like:
 
