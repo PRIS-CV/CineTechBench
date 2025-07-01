@@ -1,0 +1,12 @@
+name: capability
+channels:
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+dependencies:
+  - python=3.9
+  - numpy
+  - openai
+  - requests
+  - tqdm
+  - matplotlib
+prefix: /mnt/sdb/wangxinran/anaconda3/envs/capability
