@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# COCO 格式文件固定路径
-COCO_PATH="our_anno_video/right_anno/video_description_coco.json"
-# 输出目录
-OUTPUT_DIR="our_res_video/right_res"
+COCO_PATH="anno/processed/description_coco.json"
+OUTPUT_DIR="res/processed"
 mkdir -p "${OUTPUT_DIR}"
 
-# 模型列表
 models=(
   "Doubao-1.5-Vision-Pro"
   "Gemini-2.0-Flash"
@@ -32,18 +29,15 @@ models=(
 for m in "${models[@]}"; do
   echo "⏳ Processing model: $m"
 
-  # 1. 构造该模型的 res_path
-  RES_PATH="our_res_video/models_generated_video_description/${m}-CinematicShotStyle-Video-Description.json"
+  RES_PATH="res/models_generated_image_description/${m}-CinematicShotStyle-Image-Description.json"
   if [[ ! -f "${RES_PATH}" ]]; then
     echo "!!! Warning: ${RES_PATH} not found, skipping."
     continue
   fi
 
-  # Define the full output file path including filename
   OUTPUT_PATH="${OUTPUT_DIR}/${m}_coco.json"
 
-  # 2. 调用 Python 脚本，输出到固定文件
-  python zyx_tiaozheng/res_proceses.py \
+  python create/res_proceses.py \
     --coco_path "${COCO_PATH}" \
     --res_path  "${RES_PATH}" \
     --output_dir "${OUTPUT_PATH}"

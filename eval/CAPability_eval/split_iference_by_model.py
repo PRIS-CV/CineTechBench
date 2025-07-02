@@ -3,8 +3,8 @@ import json
 import os
 import sys
 
-#METRICS = ["Scale", "Angle", "Composition", "Colors", "Lighting", "Focal Lengths"]
-METRICS = ["Movement"]
+METRICS = ["Scale", "Angle", "Composition", "Colors", "Lighting", "Focal Lengths"]
+#METRICS = ["Movement"]
 
 def load_anno_ids(anno_dir):
     """读取 anno 输入目录下每个 metric.jsonl，返回 {metric: set(file_id)}"""

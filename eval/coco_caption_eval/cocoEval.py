@@ -28,15 +28,15 @@ def main():
     model = args.model
 
     # 固定的标注文件
-    annFile = "our_anno_video/right_anno/video_description_coco.json"
+    annFile = "anno/processed/description_coco.json"
     # 各模型对应的结果 JSON
-    resFile = f"our_res_video/right_res/{model}_coco.json"
+    resFile = f"res/processed/{model}_coco.json"
     # COCO Eval 输出的各图片评估结果
-    evalImgsFile = f"our_eval_res_video/{model}/evalImgsFile.json"
+    evalImgsFile = f"coco_res/{model}/evalImgsFile.json"
     # COCO Eval 输出的汇总结果
-    evalFile = f"our_eval_res_video/{model}/evalFile.json"
+    evalFile = f"coco_res/{model}/evalFile.json"
     # 绘制并保存 CIDEr 分数直方图的路径
-    saveimage = f"our_eval_res_video/{model}/cider_histogram.png"
+    saveimage = f"coco_res/{model}/cider_histogram.png"
 
     # 确保输出目录存在
     out_dir = os.path.dirname(evalImgsFile)
@@ -68,7 +68,6 @@ def main():
     # cocoEval.params['image_id'] = cocoRes.getImgIds()
 
     # evaluate results
-    #不训练SPICE了 太慢，直接在eval.py里改了
     cocoEval.evaluate()
 
     # ---- Code cell ----
@@ -91,15 +90,6 @@ def main():
     anns = cocoRes.loadAnns(annIds)
     coco.showAnns(anns)
 
-    '''
-    img = coco.loadImgs(imgId)[0]
-    try:
-        I = io.imread(f'{dataDir}/images/{dataType}/{img["file_name"]}')
-        plt.imshow(I); plt.axis('off'); plt.show()
-    except FileNotFoundError as e:
-        print('⚠️ 找不到图片：', e.filename)
-    '''
-
     # ---- Code cell ----
     # plot score histogram
     ciderScores = [eva['CIDEr'] for eva in cocoEval.evalImgs]
@@ -111,9 +101,7 @@ def main():
     print("最小值、最大值：", np.min(ciderScores), np.max(ciderScores))
     print("去重后有多少种值：", len(set(ciderScores)))
 
-
-    # 保存图到文件（格式可选 png/jpg/pdf，dpi 可调）
-    plt.tight_layout()  # 防止标题和标签被裁剪
+    plt.tight_layout()  
     plt.savefig(saveimage, dpi=200)
 
 

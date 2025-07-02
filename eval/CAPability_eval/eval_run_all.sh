@@ -1,9 +1,9 @@
 # 根目录下执行
 
-INFER_DIR="our_inference/tiaozheng_description_2"
-GT_ROOT="our_anno_2"
-GT_ROOT_video="our_anno_video"
-SAVE_BASE="our_evaluation_2"
+INFER_DIR="inference/processed"
+GT_ROOT="anno"
+GT_ROOT_video="anno_video"
+SAVE_BASE="evaluation"
 
 # 1) 列出所有模型并打印
 echo "Found models:"

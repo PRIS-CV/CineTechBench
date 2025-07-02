@@ -30,9 +30,9 @@ for m in "${models[@]}"; do
   echo "⏳ 正在处理模型: $m"
   python split_iference_by_model.py \
     "$m" \
-    ./our_anno_video \
-    ./our_inference_video/models_generated_video_description \
-    ./our_inference_video/tiaozheng_description
+    ./anno \
+    ./inference/models_generated_image_description \
+    ./inference/processed
 done
 
 echo "🎉 全部模型处理完毕！"

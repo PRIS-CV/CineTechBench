@@ -34,18 +34,18 @@ def main():
     # Ensure the output directory exists
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
-    # 读取 COCO 格式 images 列表
+    # Read the 'images' list from the COCO-format file
     with open(coco_path, 'r', encoding='utf-8') as f:
         coco = json.load(f)
 
-    # 读取自定义描述
+    # Load custom descriptions
     with open(res_path, 'r', encoding='utf-8') as f:
         res = json.load(f)
 
-    # 构建 file_name -> image_id 映射
+    # Build mapping from file_name to image_id
     file2id = {img['file_name']: img['id'] for img in coco.get('images', [])}
 
-    # 生成输出列表
+    # Generate output list
     output_list = []
     for file_name, attrs in res.items():
         img_id = file2id.get(file_name)
@@ -54,7 +54,6 @@ def main():
             continue
 
         raw = attrs.get('Description', '')
-        # 一行搞定：如果是 list，就取第一个，否则直接用；最后 strip
         caption = (raw[0] if isinstance(raw, list) and raw else raw).strip()
 
         output_list.append({
@@ -62,8 +61,7 @@ def main():
             "caption": caption
         })
 
-
-    # 写出 JSON 列表
+    # Write output JSON list
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(output_list, f, ensure_ascii=False, indent=2)
 
