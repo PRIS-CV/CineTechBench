@@ -28,7 +28,7 @@ models=(
 # 循环执行
 for m in "${models[@]}"; do
   echo "⏳ 正在处理模型: $m"
-  python split_iference_by_model.py \
+  python split_inference_by_model.py \
     "$m" \
     ./anno \
     ./inference/models_generated_image_description \
