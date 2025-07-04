@@ -1,0 +1,18 @@
+{"file_id": "001-Scale-001.jpg", "file_path": "data/scale/001-Scale-001.jpg", "annotation": "Medium Shot", "task": "Scale", "data_type": "image"}
+{"file_id": "001-Scale-007.jpg", "file_path": "data/scale/001-Scale-007.jpg", "annotation": "Long Shot", "task": "Scale", "data_type": "image"}
+{"file_id": "004-Scale-002.jpg", "file_path": "data/scale/004-Scale-002.jpg", "annotation": "Extreme Long Shot", "task": "Scale", "data_type": "image"}
+{"file_id": "008-Scale-001.jpg", "file_path": "data/scale/008-Scale-001.jpg", "annotation": "Long Shot", "task": "Scale", "data_type": "image"}
+{"file_id": "010-Scale-001.jpg", "file_path": "data/scale/010-Scale-001.jpg", "annotation": "Medium Long Shot", "task": "Scale", "data_type": "image"}
+{"file_id": "012-Scale-001.jpg", "file_path": "data/scale/012-Scale-001.jpg", "annotation": "Long Shot", "task": "Scale", "data_type": "image"}
+{"file_id": "012-Scale-002.jpg", "file_path": "data/scale/012-Scale-002.jpg", "annotation": "Medium Close-Up", "task": "Scale", "data_type": "image"}
+{"file_id": "015-Scale-005.jpg", "file_path": "data/scale/015-Scale-005.jpg", "annotation": "Close-Up", "task": "Scale", "data_type": "image"}
+{"file_id": "018-Scale-003.jpg", "file_path": "data/scale/018-Scale-003.jpg", "annotation": "Extreme Long Shot", "task": "Scale", "data_type": "image"}
+{"file_id": "029-Scale-002.jpg", "file_path": "data/scale/029-Scale-002.jpg", "annotation": "Long Shot", "task": "Scale", "data_type": "image"}
+{"file_id": "031-Scale-001.jpg", "file_path": "data/scale/031-Scale-001.jpg", "annotation": "Long Shot", "task": "Scale", "data_type": "image"}
+{"file_id": "032-Scale-003.jpg", "file_path": "data/scale/032-Scale-003.jpg", "annotation": "Medium Close-Up", "task": "Scale", "data_type": "image"}
+{"file_id": "033-Scale-001.jpg", "file_path": "data/scale/033-Scale-001.jpg", "annotation": "Long Shot", "task": "Scale", "data_type": "image"}
+{"file_id": "037-Scale-001.jpg", "file_path": "data/scale/037-Scale-001.jpg", "annotation": "Close-Up", "task": "Scale", "data_type": "image"}
+{"file_id": "053-Scale-001.jpg", "file_path": "data/scale/053-Scale-001.jpg", "annotation": "Long Shot", "task": "Scale", "data_type": "image"}
+{"file_id": "055-Scale-001.jpg", "file_path": "data/scale/055-Scale-001.jpg", "annotation": "Long Shot", "task": "Scale", "data_type": "image"}
+{"file_id": "055-Scale-003.jpg", "file_path": "data/scale/055-Scale-003.jpg", "annotation": "Close-Up", "task": "Scale", "data_type": "image"}
+{"file_id": "055-Scale-004.jpg", "file_path": "data/scale/055-Scale-004.jpg", "annotation": "Long Shot", "task": "Scale", "data_type": "image"}
