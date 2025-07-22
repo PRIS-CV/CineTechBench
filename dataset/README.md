@@ -12,9 +12,11 @@ huggingface-cli download --repo-type dataset --resume-download Xinran0906/CineTe
 ```
 
 ## Download the raw videos 
-Please download the raw videos according to the link in `./annotation/video_annotation.json`
+Please download the raw videos the according to the instruction[here](./download_video.md).
+
 ```bash
 mkdir raw
+python download_videos.py
 ```
 
 ## Clip the raw videos 
