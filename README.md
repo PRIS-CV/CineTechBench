@@ -34,7 +34,7 @@ We present CineTechBench, a pioneering benchmark founded on precise, manual anno
 - [x] Movie image link organization and documentation
 - [x] Video Question-answering evaluation script
 - [x] Image Question-answering evaluation script
-- [ ] Description evaluation script
+- [x] Description evaluation script
 
 
 ## Prepare Benchmark
@@ -78,6 +78,10 @@ We provide an example to evaluate Gemini-2.5-Pro on camera movement QA.
 ```
 python video_qa_gemini_2.5_pro.py --json_path /path/to/your/video_annotation.json --video_path /path/to/your/video_folder
 ```
+
+**CineTech Description**
+
+We provide code to evaluate MLLMs on description generation on metrics in CAPability and MSCOCO, see the instructions for [CAPability](eval/CAPability_eval) and [COCO](eval/coco_caption_eval).
 
 **Video Camera Movement Generation**
 

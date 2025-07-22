@@ -1,0 +1,10 @@
+name: coco
+channels:
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+dependencies:
+  - python=3.6
+  - ipykernel
+  - matplotlib
+  - scikit-image
+prefix: /mnt/sdb/wangxinran/anaconda3/envs/coco
