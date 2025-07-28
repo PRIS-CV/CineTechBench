@@ -24,7 +24,7 @@ from OPTIONS import OPTIONS
 from OPTIONS_video import OPTIONS_video
 
 # SERVER_URL = "https://api.openai.com/v1"
-API_KEY =  "your API key"
+API_KEY =  "your api key"
 # SERVER_URL = os.environ["SERVER_URL"]
 # API_KEY = os.environ["API_KEY"]
 # HEADERS = {
@@ -48,6 +48,9 @@ class Evaluator:
     ):
         if isinstance(tasks, list):
             self.tasks = tasks
+        elif tasks == "image":
+            opt1 = OPTIONS()
+            self.tasks = list(opt1.OPTIONS.keys())
         elif tasks == "all":
             '''
             self.tasks = [
@@ -74,13 +77,6 @@ class Evaluator:
         self.annotations = {}
         task2cap_filename = {r.split('samples_capability_')[-1].split('.jsonl')[0]: r for r in os.listdir(caption_file_root) if r.endswith('jsonl')}
         for task in self.tasks:
-
-            if task == "action" and task not in task2cap_filename:
-                shutil.copyfile(
-                    os.path.join(caption_file_root, task2cap_filename['event']),
-                    os.path.join(caption_file_root, task2cap_filename['event'].replace('event', 'action'))
-                )
-                task2cap_filename['action'] = task2cap_filename['event'].replace('event', 'action')
             cap_filename = task2cap_filename[task]
             with open(os.path.join(caption_file_root, cap_filename), 'r') as f:
                 self.captions[task] = [json.loads(l.strip('\n')) for l in f.readlines()]
@@ -491,7 +487,7 @@ def parse_args():
     parser.add_argument("--gt_file_root_video", default='our_anno_video')
     parser.add_argument("--save_root", default='our_evaluation_2/Phi-3.5-Vision-Instruct')
 
-    parser.add_argument("--tasks", default= "video")
+    parser.add_argument("--tasks", default= "image")
     parser.add_argument("--num_process", type=int, default=0)
     parser.add_argument("--eval_model", default="gpt-4.1-nano")
     parser.add_argument("--max_retry_times", type=int, default=0)

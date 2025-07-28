@@ -1,12 +1,50 @@
-{"file_id": "011-Colors-001.jpg", "file_path": "data/colors/011-Colors-001.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
-{"file_id": "012-Colors-001.jpg", "file_path": "data/colors/012-Colors-001.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
-{"file_id": "018-Colors-001.jpg", "file_path": "data/colors/018-Colors-001.jpg", "annotation": "Red", "task": "Colors", "data_type": "image"}
-{"file_id": "018-Colors-002.jpg", "file_path": "data/colors/018-Colors-002.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
-{"file_id": "018-Colors-003.jpg", "file_path": "data/colors/018-Colors-003.jpg", "annotation": "Blue", "task": "Colors", "data_type": "image"}
-{"file_id": "021-Colors-001.jpg", "file_path": "data/colors/021-Colors-001.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
-{"file_id": "031-Colors-001.jpg", "file_path": "data/colors/031-Colors-001.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
-{"file_id": "032-Colors-001.jpg", "file_path": "data/colors/032-Colors-001.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
-{"file_id": "032-Colors-004.jpg", "file_path": "data/colors/032-Colors-004.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
-{"file_id": "048-Colors-001.jpg", "file_path": "data/colors/048-Colors-001.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
-{"file_id": "058-Colors-001.jpg", "file_path": "data/colors/058-Colors-001.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
-{"file_id": "066-Colors-001.jpg", "file_path": "data/colors/066-Colors-001.jpg", "annotation": "Blue", "task": "Colors", "data_type": "image"}
+{"file_id": "001-Scale-001.jpg", "file_path": "data/colors/001-Scale-001.jpg.jpg", "annotation": "Blue", "task": "Colors", "data_type": "image"}
+{"file_id": "001-Scale-007.jpg", "file_path": "data/colors/001-Scale-007.jpg.jpg", "annotation": "Blue", "task": "Colors", "data_type": "image"}
+{"file_id": "003-Compostion-002.jpg", "file_path": "data/colors/003-Compostion-002.jpg.jpg", "annotation": "Blue", "task": "Colors", "data_type": "image"}
+{"file_id": "004-Angle-001.jpg", "file_path": "data/colors/004-Angle-001.jpg.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
+{"file_id": "004-Scale-002.jpg", "file_path": "data/colors/004-Scale-002.jpg.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
+{"file_id": "006-Angle-002.jpg", "file_path": "data/colors/006-Angle-002.jpg.jpg", "annotation": "Blue", "task": "Colors", "data_type": "image"}
+{"file_id": "006-Lighting-001.jpg", "file_path": "data/colors/006-Lighting-001.jpg.jpg", "annotation": "Blue", "task": "Colors", "data_type": "image"}
+{"file_id": "008-Angle-002.jpg", "file_path": "data/colors/008-Angle-002.jpg.jpg", "annotation": "Red", "task": "Colors", "data_type": "image"}
+{"file_id": "008-Compostion-001.jpg", "file_path": "data/colors/008-Compostion-001.jpg.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
+{"file_id": "011-Colors-001.jpg", "file_path": "data/colors/011-Colors-001.jpg.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
+{"file_id": "012-Colors-001.jpg", "file_path": "data/colors/012-Colors-001.jpg.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
+{"file_id": "012-Compostion-001.jpg", "file_path": "data/colors/012-Compostion-001.jpg.jpg", "annotation": "Blue", "task": "Colors", "data_type": "image"}
+{"file_id": "015-Scale-005.jpg", "file_path": "data/colors/015-Scale-005.jpg.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
+{"file_id": "018-Angle-001.jpg", "file_path": "data/colors/018-Angle-001.jpg.jpg", "annotation": "Black and White", "task": "Colors", "data_type": "image"}
+{"file_id": "018-Colors-001.jpg", "file_path": "data/colors/018-Colors-001.jpg.jpg", "annotation": "Red", "task": "Colors", "data_type": "image"}
+{"file_id": "018-Colors-002.jpg", "file_path": "data/colors/018-Colors-002.jpg.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
+{"file_id": "018-Colors-003.jpg", "file_path": "data/colors/018-Colors-003.jpg.jpg", "annotation": "Blue", "task": "Colors", "data_type": "image"}
+{"file_id": "018-Focal Lengths-001.jpg", "file_path": "data/colors/018-Focal Lengths-001.jpg.jpg", "annotation": "Red", "task": "Colors", "data_type": "image"}
+{"file_id": "018-Lighting-001.jpg", "file_path": "data/colors/018-Lighting-001.jpg.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
+{"file_id": "018-Lighting-003.jpg", "file_path": "data/colors/018-Lighting-003.jpg.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
+{"file_id": "019-Lighting-002.jpg", "file_path": "data/colors/019-Lighting-002.jpg.jpg", "annotation": "Black and White", "task": "Colors", "data_type": "image"}
+{"file_id": "020-Lighting-002.jpg", "file_path": "data/colors/020-Lighting-002.jpg.jpg", "annotation": "Black and White", "task": "Colors", "data_type": "image"}
+{"file_id": "021-Colors-001.jpg", "file_path": "data/colors/021-Colors-001.jpg.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
+{"file_id": "021-Compostion-001.jpg", "file_path": "data/colors/021-Compostion-001.jpg.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
+{"file_id": "021-Compostion-003.jpg", "file_path": "data/colors/021-Compostion-003.jpg.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
+{"file_id": "030-Compostion-001.jpg", "file_path": "data/colors/030-Compostion-001.jpg.jpg", "annotation": "Black and White", "task": "Colors", "data_type": "image"}
+{"file_id": "031-Colors-001.jpg", "file_path": "data/colors/031-Colors-001.jpg.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
+{"file_id": "031-Compostion-003.jpg", "file_path": "data/colors/031-Compostion-003.jpg.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
+{"file_id": "031-Lighting-001.jpg", "file_path": "data/colors/031-Lighting-001.jpg.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
+{"file_id": "032-Angle-004.jpg", "file_path": "data/colors/032-Angle-004.jpg.jpg", "annotation": "Black and White", "task": "Colors", "data_type": "image"}
+{"file_id": "032-Colors-001.jpg", "file_path": "data/colors/032-Colors-001.jpg.jpg", "annotation": "Red", "task": "Colors", "data_type": "image"}
+{"file_id": "032-Colors-004.jpg", "file_path": "data/colors/032-Colors-004.jpg.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
+{"file_id": "032-Compostion-001.jpg", "file_path": "data/colors/032-Compostion-001.jpg.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
+{"file_id": "032-Focal Lengths-002.jpg", "file_path": "data/colors/032-Focal Lengths-002.jpg.jpg", "annotation": "Green", "task": "Colors", "data_type": "image"}
+{"file_id": "032-Focal Lengths-004.jpg", "file_path": "data/colors/032-Focal Lengths-004.jpg.jpg", "annotation": "Red", "task": "Colors", "data_type": "image"}
+{"file_id": "032-Lighting-002.jpg", "file_path": "data/colors/032-Lighting-002.jpg.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
+{"file_id": "032-Scale-003.jpg", "file_path": "data/colors/032-Scale-003.jpg.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
+{"file_id": "033-Scale-001.jpg", "file_path": "data/colors/033-Scale-001.jpg.jpg", "annotation": "Black and White", "task": "Colors", "data_type": "image"}
+{"file_id": "037-Angle-002.jpg", "file_path": "data/colors/037-Angle-002.jpg.jpg", "annotation": "Black and White", "task": "Colors", "data_type": "image"}
+{"file_id": "044-Compostion-001.jpg", "file_path": "data/colors/044-Compostion-001.jpg.jpg", "annotation": "Black and White", "task": "Colors", "data_type": "image"}
+{"file_id": "045-Focal Lengths-001.jpg", "file_path": "data/colors/045-Focal Lengths-001.jpg.jpg", "annotation": "Blue", "task": "Colors", "data_type": "image"}
+{"file_id": "048-Colors-001.jpg", "file_path": "data/colors/048-Colors-001.jpg.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
+{"file_id": "055-Angle-001.jpg", "file_path": "data/colors/055-Angle-001.jpg.jpg", "annotation": "Red", "task": "Colors", "data_type": "image"}
+{"file_id": "055-Scale-003.jpg", "file_path": "data/colors/055-Scale-003.jpg.jpg", "annotation": "Red", "task": "Colors", "data_type": "image"}
+{"file_id": "058-Colors-001.jpg", "file_path": "data/colors/058-Colors-001.jpg.jpg", "annotation": "Yellow", "task": "Colors", "data_type": "image"}
+{"file_id": "059-Angle-004.jpg", "file_path": "data/colors/059-Angle-004.jpg.jpg", "annotation": "Green", "task": "Colors", "data_type": "image"}
+{"file_id": "062-Compostion-002.jpg", "file_path": "data/colors/062-Compostion-002.jpg.jpg", "annotation": "Blue", "task": "Colors", "data_type": "image"}
+{"file_id": "066-Colors-001.jpg", "file_path": "data/colors/066-Colors-001.jpg.jpg", "annotation": "Blue", "task": "Colors", "data_type": "image"}
+{"file_id": "069-Focal Lengths-003.jpg", "file_path": "data/colors/069-Focal Lengths-003.jpg.jpg", "annotation": "Black and White", "task": "Colors", "data_type": "image"}
+{"file_id": "069-Focal Lengths-006.jpg", "file_path": "data/colors/069-Focal Lengths-006.jpg.jpg", "annotation": "Black and White", "task": "Colors", "data_type": "image"}

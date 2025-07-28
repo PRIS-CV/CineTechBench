@@ -1,22 +1,89 @@
-{"file_id": "003-Compostion-002.jpg", "file_path": "data/composition/003-Compostion-002.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
-{"file_id": "006-Compostion-001.jpg", "file_path": "data/composition/006-Compostion-001.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
-{"file_id": "008-Compostion-001.jpg", "file_path": "data/composition/008-Compostion-001.jpg", "annotation": "Diagonal", "task": "Composition", "data_type": "image"}
-{"file_id": "011-Compostion-003.jpg", "file_path": "data/composition/011-Compostion-003.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
-{"file_id": "012-Compostion-001.jpg", "file_path": "data/composition/012-Compostion-001.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
-{"file_id": "021-Compostion-001.jpg", "file_path": "data/composition/021-Compostion-001.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
-{"file_id": "021-Compostion-002.jpg", "file_path": "data/composition/021-Compostion-002.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
-{"file_id": "021-Compostion-003.jpg", "file_path": "data/composition/021-Compostion-003.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
-{"file_id": "025-Compostion-004.jpg", "file_path": "data/composition/025-Compostion-004.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
-{"file_id": "028-Compostion-001.jpg", "file_path": "data/composition/028-Compostion-001.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
-{"file_id": "029-Compostion-001.jpg", "file_path": "data/composition/029-Compostion-001.jpg", "annotation": "Curved Line", "task": "Composition", "data_type": "image"}
-{"file_id": "029-Compostion-003.jpg", "file_path": "data/composition/029-Compostion-003.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
-{"file_id": "030-Compostion-001.jpg", "file_path": "data/composition/030-Compostion-001.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
-{"file_id": "031-Compostion-003.jpg", "file_path": "data/composition/031-Compostion-003.jpg", "annotation": "Diagonal", "task": "Composition", "data_type": "image"}
-{"file_id": "032-Compostion-001.jpg", "file_path": "data/composition/032-Compostion-001.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
-{"file_id": "044-Compostion-001.jpg", "file_path": "data/composition/044-Compostion-001.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
-{"file_id": "047-Compostion-003.jpg", "file_path": "data/composition/047-Compostion-003.jpg", "annotation": "Curved Line", "task": "Composition", "data_type": "image"}
-{"file_id": "055-Compostion-001.jpg", "file_path": "data/composition/055-Compostion-001.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
-{"file_id": "062-Compostion-002.jpg", "file_path": "data/composition/062-Compostion-002.jpg", "annotation": "Diagonal", "task": "Composition", "data_type": "image"}
-{"file_id": "066-Compostion-001.jpg", "file_path": "data/composition/066-Compostion-001.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
-{"file_id": "069-Compostion-002.jpg", "file_path": "data/composition/069-Compostion-002.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
-{"file_id": "069-Compostion-004.jpg", "file_path": "data/composition/069-Compostion-004.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
+{"file_id": "001-Scale-001.jpg", "file_path": "data/composition/001-Scale-001.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "001-Scale-007.jpg", "file_path": "data/composition/001-Scale-007.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "003-Compostion-002.jpg", "file_path": "data/composition/003-Compostion-002.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "004-Angle-001.jpg", "file_path": "data/composition/004-Angle-001.jpg.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
+{"file_id": "004-Scale-002.jpg", "file_path": "data/composition/004-Scale-002.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "006-Angle-002.jpg", "file_path": "data/composition/006-Angle-002.jpg.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
+{"file_id": "006-Compostion-001.jpg", "file_path": "data/composition/006-Compostion-001.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "006-Lighting-001.jpg", "file_path": "data/composition/006-Lighting-001.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "006-Lighting-002.jpg", "file_path": "data/composition/006-Lighting-002.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "008-Angle-002.jpg", "file_path": "data/composition/008-Angle-002.jpg.jpg", "annotation": "Symmetrical", "task": "Composition", "data_type": "image"}
+{"file_id": "008-Compostion-001.jpg", "file_path": "data/composition/008-Compostion-001.jpg.jpg", "annotation": "Diagonal", "task": "Composition", "data_type": "image"}
+{"file_id": "008-Lighting-002.jpg", "file_path": "data/composition/008-Lighting-002.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "008-Scale-001.jpg", "file_path": "data/composition/008-Scale-001.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "010-Scale-001.jpg", "file_path": "data/composition/010-Scale-001.jpg.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
+{"file_id": "011-Compostion-003.jpg", "file_path": "data/composition/011-Compostion-003.jpg.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
+{"file_id": "011-Focal Lengths-001.jpg", "file_path": "data/composition/011-Focal Lengths-001.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "012-Colors-001.jpg", "file_path": "data/composition/012-Colors-001.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "012-Compostion-001.jpg", "file_path": "data/composition/012-Compostion-001.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "012-Scale-001.jpg", "file_path": "data/composition/012-Scale-001.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "012-Scale-002.jpg", "file_path": "data/composition/012-Scale-002.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "015-Angle-001.jpg", "file_path": "data/composition/015-Angle-001.jpg.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
+{"file_id": "015-Angle-007.jpg", "file_path": "data/composition/015-Angle-007.jpg.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
+{"file_id": "015-Scale-005.jpg", "file_path": "data/composition/015-Scale-005.jpg.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
+{"file_id": "018-Angle-001.jpg", "file_path": "data/composition/018-Angle-001.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "018-Colors-002.jpg", "file_path": "data/composition/018-Colors-002.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "018-Colors-003.jpg", "file_path": "data/composition/018-Colors-003.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "018-Focal Lengths-001.jpg", "file_path": "data/composition/018-Focal Lengths-001.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "018-Lighting-001.jpg", "file_path": "data/composition/018-Lighting-001.jpg.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
+{"file_id": "018-Lighting-003.jpg", "file_path": "data/composition/018-Lighting-003.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "018-Lighting-004.jpg", "file_path": "data/composition/018-Lighting-004.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "018-Scale-003.jpg", "file_path": "data/composition/018-Scale-003.jpg.jpg", "annotation": "Curved Line", "task": "Composition", "data_type": "image"}
+{"file_id": "019-Lighting-002.jpg", "file_path": "data/composition/019-Lighting-002.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "020-Angle-002.jpg", "file_path": "data/composition/020-Angle-002.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "020-Lighting-001.jpg", "file_path": "data/composition/020-Lighting-001.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "020-Lighting-002.jpg", "file_path": "data/composition/020-Lighting-002.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "021-Colors-001.jpg", "file_path": "data/composition/021-Colors-001.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "021-Compostion-001.jpg", "file_path": "data/composition/021-Compostion-001.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "021-Compostion-002.jpg", "file_path": "data/composition/021-Compostion-002.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "021-Compostion-003.jpg", "file_path": "data/composition/021-Compostion-003.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "021-Lighting-001.jpg", "file_path": "data/composition/021-Lighting-001.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "025-Compostion-004.jpg", "file_path": "data/composition/025-Compostion-004.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "025-Focal Lengths-001.jpg", "file_path": "data/composition/025-Focal Lengths-001.jpg.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
+{"file_id": "028-Compostion-001.jpg", "file_path": "data/composition/028-Compostion-001.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "029-Angle-003.jpg", "file_path": "data/composition/029-Angle-003.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "029-Compostion-001.jpg", "file_path": "data/composition/029-Compostion-001.jpg.jpg", "annotation": "Curved Line", "task": "Composition", "data_type": "image"}
+{"file_id": "029-Compostion-003.jpg", "file_path": "data/composition/029-Compostion-003.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "029-Scale-002.jpg", "file_path": "data/composition/029-Scale-002.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "030-Compostion-001.jpg", "file_path": "data/composition/030-Compostion-001.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "031-Colors-001.jpg", "file_path": "data/composition/031-Colors-001.jpg.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
+{"file_id": "031-Compostion-003.jpg", "file_path": "data/composition/031-Compostion-003.jpg.jpg", "annotation": "Diagonal", "task": "Composition", "data_type": "image"}
+{"file_id": "031-Lighting-001.jpg", "file_path": "data/composition/031-Lighting-001.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "031-Scale-001.jpg", "file_path": "data/composition/031-Scale-001.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "032-Angle-003.jpg", "file_path": "data/composition/032-Angle-003.jpg.jpg", "annotation": "Curved Line", "task": "Composition", "data_type": "image"}
+{"file_id": "032-Angle-004.jpg", "file_path": "data/composition/032-Angle-004.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "032-Angle-005.jpg", "file_path": "data/composition/032-Angle-005.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "032-Colors-001.jpg", "file_path": "data/composition/032-Colors-001.jpg.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
+{"file_id": "032-Compostion-001.jpg", "file_path": "data/composition/032-Compostion-001.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "032-Focal Lengths-004.jpg", "file_path": "data/composition/032-Focal Lengths-004.jpg.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
+{"file_id": "032-Scale-003.jpg", "file_path": "data/composition/032-Scale-003.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "033-Scale-001.jpg", "file_path": "data/composition/033-Scale-001.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "037-Angle-002.jpg", "file_path": "data/composition/037-Angle-002.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "041-Lighting-002.jpg", "file_path": "data/composition/041-Lighting-002.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "043-Lighting-001.jpg", "file_path": "data/composition/043-Lighting-001.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "044-Compostion-001.jpg", "file_path": "data/composition/044-Compostion-001.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "045-Focal Lengths-002.jpg", "file_path": "data/composition/045-Focal Lengths-002.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "046-Angle-001.jpg", "file_path": "data/composition/046-Angle-001.jpg.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
+{"file_id": "046-Focal Lengths-001.jpg", "file_path": "data/composition/046-Focal Lengths-001.jpg.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
+{"file_id": "047-Compostion-003.jpg", "file_path": "data/composition/047-Compostion-003.jpg.jpg", "annotation": "Curved Line", "task": "Composition", "data_type": "image"}
+{"file_id": "047-Lighting-003.jpg", "file_path": "data/composition/047-Lighting-003.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "048-Angle-003.jpg", "file_path": "data/composition/048-Angle-003.jpg.jpg", "annotation": "Curved Line", "task": "Composition", "data_type": "image"}
+{"file_id": "048-Colors-001.jpg", "file_path": "data/composition/048-Colors-001.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "053-Scale-001.jpg", "file_path": "data/composition/053-Scale-001.jpg.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
+{"file_id": "055-Angle-001.jpg", "file_path": "data/composition/055-Angle-001.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "055-Compostion-001.jpg", "file_path": "data/composition/055-Compostion-001.jpg.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
+{"file_id": "055-Scale-001.jpg", "file_path": "data/composition/055-Scale-001.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "055-Scale-003.jpg", "file_path": "data/composition/055-Scale-003.jpg.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
+{"file_id": "055-Scale-004.jpg", "file_path": "data/composition/055-Scale-004.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "057-Angle-002.jpg", "file_path": "data/composition/057-Angle-002.jpg.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
+{"file_id": "059-Angle-004.jpg", "file_path": "data/composition/059-Angle-004.jpg.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
+{"file_id": "060-Angle-001.jpg", "file_path": "data/composition/060-Angle-001.jpg.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
+{"file_id": "062-Compostion-002.jpg", "file_path": "data/composition/062-Compostion-002.jpg.jpg", "annotation": "Diagonal", "task": "Composition", "data_type": "image"}
+{"file_id": "066-Compostion-001.jpg", "file_path": "data/composition/066-Compostion-001.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "069-Angle-001.jpg", "file_path": "data/composition/069-Angle-001.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "069-Compostion-002.jpg", "file_path": "data/composition/069-Compostion-002.jpg.jpg", "annotation": "Rule of Thirds", "task": "Composition", "data_type": "image"}
+{"file_id": "069-Compostion-004.jpg", "file_path": "data/composition/069-Compostion-004.jpg.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}
+{"file_id": "069-Focal Lengths-002.jpg", "file_path": "data/composition/069-Focal Lengths-002.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "069-Focal Lengths-003.jpg", "file_path": "data/composition/069-Focal Lengths-003.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "069-Focal Lengths-004.jpg", "file_path": "data/composition/069-Focal Lengths-004.jpg.jpg", "annotation": "Central", "task": "Composition", "data_type": "image"}
+{"file_id": "069-Focal Lengths-006.jpg", "file_path": "data/composition/069-Focal Lengths-006.jpg.jpg", "annotation": "Framing", "task": "Composition", "data_type": "image"}

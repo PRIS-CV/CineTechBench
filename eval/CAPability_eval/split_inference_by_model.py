@@ -22,7 +22,7 @@ def load_anno_ids(anno_dir):
 
 def split_descriptions(model_name, anno_dir, inf_dir, out_dir):
     # 1. 读入 Cinematic 描述 JSON
-    inf_path = os.path.join(inf_dir, f"{model_name}-CinematicShotStyle-Video-Description.json")
+    inf_path = os.path.join(inf_dir, f"{model_name}-CinematicShotStyle-Image-Description.json")
     if not os.path.isfile(inf_path):
         print(f"❌ 找不到描述文件：{inf_path}", file=sys.stderr)
         sys.exit(1)

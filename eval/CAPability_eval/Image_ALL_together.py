@@ -2,7 +2,7 @@ import os
 import json
 
 # 根目录
-base_dir = 'our_evaluation_2'
+base_dir = 'xxxx'
 
 # 最终汇总字典
 aggregated = {}

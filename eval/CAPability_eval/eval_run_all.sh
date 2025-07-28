@@ -1,9 +1,9 @@
-# 根目录下执行
+#!/bin/bash
 
 INFER_DIR="inference/processed"
 GT_ROOT="anno"
 GT_ROOT_video="anno_video"
-SAVE_BASE="evaluation"
+SAVE_BASE="results"
 
 # 1) 列出所有模型并打印
 echo "Found models:"
