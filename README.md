@@ -106,7 +106,7 @@ We fully respect the copyright of all films and do not use any clips for commerc
 
 
 ## 🤗 Acknowledgements
-We would like to thank the contributors to the [Wan2.1](https://github.com/Wan-Video/Wan2.1), [FramePack](https://github.com/lllyasviel/FramePack), [CamI2V](https://github.com/ZGCTroy/CamI2V), [vLLM](https://github.com/vllm-project/vllm), [SGLang](https://github.com/sgl-project/sglang), [LMDeploy](https://github.com/InternLM/lmdeploy), [HunyuanVideo](https://github.com/Tencent/HunyuanVideo), [HunyuanVideo-I2V](https://github.com/Tencent/HunyuanVideo-I2V), [MovieNet](https://movienet.github.io/#), [SkyReels-V2](https://github.com/SkyworkAI/SkyReels-V2), [MonST3R](https://monst3r-project.github.io/), [CAPability](https://capability-bench.github.io/) for their open research.
+We would like to thank the contributors to the [Wan2.1](https://github.com/Wan-Video/Wan2.1), [FramePack](https://github.com/lllyasviel/FramePack), [CamI2V](https://github.com/ZGCTroy/CamI2V), [vLLM](https://github.com/vllm-project/vllm), [SGLang](https://github.com/sgl-project/sglang), [LMDeploy](https://github.com/InternLM/lmdeploy), [HunyuanVideo](https://github.com/Tencent/HunyuanVideo), [HunyuanVideo-I2V](https://github.com/Tencent/HunyuanVideo-I2V), [MovieNet](https://movienet.github.io/#), [SkyReels-V2](https://github.com/SkyworkAI/SkyReels-V2), [MonST3R](https://monst3r-project.github.io/), [CAPability](https://capability-bench.github.io/) for their open research. We also wish to acknowledge [IMDb](https://www.imdb.com/) for its comprehensive movie database and the [MOVIECLIPS](https://www.youtube.com/@MOVIECLIPS) YouTube channel for its vast collection of high-quality clips, which were instrumental to our work.
 
 ## 📮 Contant
 
