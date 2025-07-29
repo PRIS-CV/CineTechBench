@@ -3,38 +3,42 @@ import os
 import json
 import re
 from datetime import datetime
-from google import genai
-from google.genai import types
+from openai import OpenAI
 import time
 import random
 import argparse # Imported argparse
 
 """
 
-Image Question Answering Script using Gemini 2.5 Pro.
+Image Question Answering Script using InternVL-3-8B.
+
+Prerequisites: This script requires a model endpoint served by the lmdeploy framework.
+    1. Deploy the Model: Follow the deployment guide in the official lmdeploy documentation: https://lmdeploy.readthedocs.io/en/latest/
+    2. Configure the Script: Update the HOST_URL variable in this script to match your service endpoint.
+    3. Execute: You can now run the script.
 
 How to Run:
-    python image_qa_gemini_2.5_pro.py --json_path /path/to/your/image_annotation.json --image_path /path/to/your/image_folder
+    python image_qa_internvl_3.py --json_path /path/to/your/image_annotation.json --image_path /path/to/your/image_folder
 
 Output files: Contains the results for each image and summary statistics in each dimension.
-    - results-Gemini-2.5-Pro-{dimension1}.json
-    - results-Gemini-2.5-Pro-{dimension2}.json
-    - results-Gemini-2.5-Pro-{dimension3}.json
+    - results-InternVL-3-8B-Instruct-{dimension1}.json
+    - results-InternVL-3-8B-Instruct-{dimension2}.json
+    - results-InternVL-3-8B-Instruct-{dimension3}.json
     ....
 
-Use other commercial models:
-    To integrate a different model, you must modify API_KEY the call_model function to match the model's specific prompt template.
+Use other open-source models:
+    To integrate a different model, you must modify the get_model_response function to match the model's specific prompt template.
 
 """
 
-# --- Configuration Area: Paths & API Key ---
-# Please modify these paths and your API key to match your local setup.
+# --- Configuration Area: Paths & HOST_URL ---
+# Please modify these paths and your HOST_URL to match your local setup.
 
 # 1. MODEL_NAME
-# Specify the model you want to use for the evaluation.
-# You can change this to other compatible models like 'gemini-2.5-pro' and model codes like 'gemini-2.5-pro-preview-03-25'.
-MODEL_NAME = 'Gemini-2.5-Pro'
-MODEL_CODE = 'gemini-2.5-pro-preview-03-25'
+# Model name, used for naming the output files
+MODEL_NAME = 'InternVL-3-8B'
+# Host url, used for API calls
+HOST_URL= f"http://SERVER_HOST:SERVER_PORT/v1"
 
 # 2. BASE_DATASET_PATH
 # This path will now be set via a command-line argument.
@@ -191,7 +195,7 @@ def extract_answer(raw_output, options_dict, max_retry=2, retry_func=None):
 
 def get_model_response(img_path,question):
     """
-    Sends the image and question to the Gemini model and gets a response.
+    Sends the image and question to the model and gets a response.
 
     Args:
         img_path (str): The file path of the image to be analyzed.
@@ -200,31 +204,29 @@ def get_model_response(img_path,question):
     Returns:
         str: The text response from the model.
     """
-    client = genai.Client(api_key=GOOGLE_API_KEY)
-    with open(img_path, 'rb') as f:
-        img_bytes = f.read()
-
-    # The model identifier for Gemini 2.5 Pro.
-    # Ensure you have access to this model version.   
-    model=MODEL_CODE
-    attempt = 0
-    while attempt < MAX_API_RETRIES:
-        try:
-            response = client.models.generate_content(
-                model=model,
-                contents=[
-                types.Part.from_bytes(
-                    data=img_bytes,
-                    mime_type='image/jpeg',
-                ),
-                question
-                ]
-            )
-            return(response.text)
-        except Exception as e:
-            attempt += 1
-            print(f"[Retry {attempt}/{MAX_API_RETRIES}] Error: {e}")
-    return "ERROR: Max retries exceeded"
+    client = OpenAI(base_url=HOST_URL, api_key="None")
+    models = client.models.list()
+    model = models.data[0].id
+    base64_image = encode_image(img_path)
+    completion = client.chat.completions.create(
+    model=model,
+    messages=[
+    	{
+    	    "role": "system",
+            "content": [{"type":"text","text": "You are a helpful assistant."}]},
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "image_url",
+                    "image_url": {"url": f"data:image/png;base64,{base64_image}"}, 
+                },
+                {"type": "text", "text": question},
+            ],
+        }
+    ],
+    )
+    return(completion.choices[0].message.content)
 
 
 
@@ -358,7 +360,7 @@ if __name__ == "__main__":
     # --- Argument Parsing ---
     # Setup the parser to accept command-line arguments for file paths.
     parser = argparse.ArgumentParser(
-        description="Run image QA evaluation with Gemini 2.5 Pro.",
+        description="Run image QA evaluation with Qwen2.5-VL.",
         formatter_class=argparse.RawTextHelpFormatter  # Ensures help text formatting is clean
     )
     parser.add_argument(
@@ -379,13 +381,6 @@ if __name__ == "__main__":
     # The global path variables are updated with the values from the command line.
     ANNOTATION_JSON_PATH = args.json_path
     BASE_DATASET_PATH = args.image_path
-
-    # --- Pre-run Checks ---
-    # Exit if the user has not replaced the placeholder API key.
-    if "YOUR_GOOGLE_AI_API_KEY_HERE" in GOOGLE_API_KEY:
-        print("🛑 ERROR: Please replace 'YOUR_GOOGLE_AI_API_KEY_HERE' with your actual Google AI API key in the script.")
-        exit(1)
-
 
     # Loop through each dimension and run the main evaluation function
     for dim in ALL_DIMENSIONS:

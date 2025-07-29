@@ -21,15 +21,18 @@ How to Run:
 Output files:
     - results-Gemini-2.5-Pro.json: Contains detailed results for each video
     - summary-Gemini-2.5-Pro.json: Contains overall accuracy and statistics
-    
+
+Use other commercial models:
+    To integrate a different model, you must modify API_KEY the call_model function to match the model's specific prompt template.
+
 """
 
 # Replace with your actual API key
 API_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 
 # Model name, used for naming the output files
-MODEL_NAME = "Gemini-2.5-Pro"
+MODEL_NAME = 'Gemini 2.5 Pro'
 # Model code, used for API calls
-model='gemini-2.5-pro-preview-03-25'
+MODEL_CODE='gemini-2.5-pro-preview-03-25'
 
 # Retry logic parameters
 MAX_API_RETRIES = 5
@@ -149,7 +152,7 @@ def call_model(
     while attempt < max_retries:
         try:
             response = client.models.generate_content(
-                model=model,
+                model=MODEL_CODE,
                 contents=types.Content(
                     parts=[
                         types.Part(text=question),
