@@ -126,7 +126,13 @@ If you have any question please feel free to mail to wangxr@bupt.edu.cn.
 }
 ```
 
+## 📄 License and Data Usage Policy
+This project is released under the [CC BY-NC-ND 4.0](https://spdx.org/licenses/CC-BY-NC-ND-4.0) License. This means you are free to share the work with attribution, for non-commercial purposes, and without derivatives.
 
+Data Usage Disclaimer:
+All video and image content referenced in this project is publicly available and linked directly from official sources. We do not host, copy, or redistribute any copyrighted media. Usage of these links complies with the respective platforms' terms of service. This approach supports responsible research practices while ensuring long-term accessibility and ethical compliance.
+
+Please ensure your usage of this repository adheres to the license terms and respects the rights of original content creators.
 
 
 
