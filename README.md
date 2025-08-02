@@ -126,14 +126,37 @@ If you have any question please feel free to mail to wangxr@bupt.edu.cn.
 }
 ```
 
+
 ## 📄 License and Data Usage Policy
-This project is released under the [CC BY-NC-ND 4.0](https://spdx.org/licenses/CC-BY-NC-ND-4.0) License. This means you are free to share the work with attribution, for non-commercial purposes, and without derivatives.
 
-Data Usage Disclaimer:
-All video and image content referenced in this project is publicly available and linked directly from official sources. We do not host, copy, or redistribute any copyrighted media. Usage of these links complies with the respective platforms' terms of service. This approach supports responsible research practices while ensuring long-term accessibility and ethical compliance.
+### General Terms
 
-Please ensure your usage of this repository adheres to the license terms and respects the rights of original content creators.
+By downloading, accessing, or using this dataset, you acknowledge that you have read, understood, and agree to be bound by all the terms and conditions of this agreement.
 
+### 📜 Core License
 
+The Dataset is released under the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International ([CC BY-NC-ND 4.0](https://spdx.org/licenses/CC-BY-NC-ND-4.0)) License**.
 
+This means you are free to copy and redistribute the material in any medium or format under the following terms:
 
+* **ATTRIBUTION** — You must give appropriate credit by citing our original research paper, provide a link to the license, and indicate if any changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+* **NON-COMMERCIAL** — You may not use the Dataset for commercial purposes. This includes any use where the primary purpose is for commercial advantage or monetary compensation. The Dataset is intended for academic and research use only.
+
+* **NO DERIVATIVES** — If you remix, transform, or build upon the material, you may not distribute the modified material. You are permitted to share and redistribute the Dataset only in its original, unmodified form.
+
+### 🔗 Disclaimer Regarding Third-Party Content
+
+This Dataset does not host or distribute any copyrighted video or image files. The Dataset consists solely of metadata (such as annotations, descriptions, and question-answer pairs) and publicly available hyperlinks to the original content, which remains on third-party platforms.
+
+We do not claim ownership of any linked media. All rights to the original visual content belong to their respective copyright holders. Users are solely responsible for adhering to the terms of service, copyright policies, and licensing agreements of the source platforms when accessing or using the linked content.
+
+### ⚖️ No Warranty and Limitation of Liability
+
+> THE DATASET IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+>
+> IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE DATASET OR THE USE OR OTHER DEALINGS IN THE DATASET.
+
+### ⚠️ General Disclaimer
+
+You are solely responsible for any legal liability arising from your improper use of the Dataset. We reserve the right to terminate your access to the Dataset at any time if you fail to comply with these terms.
