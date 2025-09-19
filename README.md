@@ -12,7 +12,8 @@
 </div>
 
 
-
+## 🔥 News
+CineTechBench has been accepted at NeurIPS 2025 as a poster!
 
 ## 👀 Introduction
 We present CineTechBench, a pioneering benchmark founded on precise, manual annotation by seasoned cinematography experts across key cinematography dimensions. Our benchmark covers seven essential aspects—shot scale, shot angle, composition, camera movement, lighting, color, and focal length—and includes over 600 annotated movie images and 120 movie clips with clear cinematographic techniques.
